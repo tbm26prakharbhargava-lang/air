@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Situation",
+  "type": "object",
+  "required": [
+    "id",
+    "mode",
+    "level",
+    "title",
+    "context",
+    "objective",
+    "instructions",
+    "constraints",
+    "hints",
+    "rubric",
+    "variants",
+    "tags"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "mode": { "type": "string", "enum": ["SPEAK", "THINK"] },
+    "level": { "type": "integer", "minimum": 1, "maximum": 10 },
+    "title": { "type": "string" },
+    "context": { "type": "string" },
+    "objective": { "type": "string" },
+    "instructions": { "type": "string" },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "hints": { "type": "array", "items": { "type": "string" } },
+    "rubric": {
+      "type": "object",
+      "required": ["strength", "improvement"],
+      "properties": {
+        "strength": { "type": "string" },
+        "improvement": { "type": "string" }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "prompt", "difficulty_hint"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string", "enum": ["A", "B", "C"] },
+          "prompt": { "type": "string" },
+          "difficulty_hint": { "type": "string" }
+        }
+      }
+    },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  }
+}
