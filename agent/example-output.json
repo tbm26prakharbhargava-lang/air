@@ -1,0 +1,69 @@
+{
+  "situation": {
+    "id": "speak-explain-2024-01-01T00-00-00-000Z",
+    "mode": "SPEAK",
+    "level": 2,
+    "title": "Explain in real life",
+    "context": "You are in a realistic, everyday situation.",
+    "objective": "Express your thinking clearly and calmly.",
+    "instructions": "Respond in 2–4 sentences. Keep it simple and structured.",
+    "constraints": ["No jargon", "Keep it concise"],
+    "hints": ["Start with the main idea", "Give one supporting detail"],
+    "rubric": {
+      "strength": "Your idea came across clearly.",
+      "improvement": "Try separating your response into two parts."
+    },
+    "variants": [
+      {
+        "id": "speak-explain-2024-01-01T00-00-00-000Z-A",
+        "label": "A",
+        "prompt": "Give a simple response with one clear point.",
+        "difficulty_hint": "easier framing"
+      },
+      {
+        "id": "speak-explain-2024-01-01T00-00-00-000Z-B",
+        "label": "B",
+        "prompt": "Give a structured response with a main point and a reason.",
+        "difficulty_hint": "baseline framing"
+      },
+      {
+        "id": "speak-explain-2024-01-01T00-00-00-000Z-C",
+        "label": "C",
+        "prompt": "Give a concise response with a main point and a tradeoff.",
+        "difficulty_hint": "harder framing"
+      }
+    ],
+    "tags": ["SPEAK", "Explain", "Anxious Performer", "easy"]
+  },
+  "rubric": {
+    "strength": "Your idea came across clearly.",
+    "improvement": "Try separating your response into two parts."
+  },
+  "wireframes": [
+    {
+      "name": "Home",
+      "elements": ["Avatar", "Mode buttons", "Streak indicator"],
+      "notes": "Calm greeting and a single question."
+    },
+    {
+      "name": "Situation",
+      "elements": ["Situation title", "Context card", "Start button"],
+      "notes": "One primary action. No clutter."
+    },
+    {
+      "name": "Session",
+      "elements": ["Prompt", "Mic toggle or input", "Optional timer"],
+      "notes": "Encourage speaking/thinking without pressure."
+    },
+    {
+      "name": "Feedback",
+      "elements": ["One strength", "One improvement", "Retry + Continue"],
+      "notes": "Supportive, short, actionable."
+    },
+    {
+      "name": "Progress",
+      "elements": ["Level bar", "Dot indicators", "Next session CTA"],
+      "notes": "Progress is visible but not stressful."
+    }
+  ]
+}
