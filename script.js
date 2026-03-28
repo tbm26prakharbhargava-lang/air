@@ -1,5 +1,6 @@
 const siteContent = {
   nav: [
+    { label: "Home", href: "#hero" },
     { label: "Frameworks", href: "#frameworks" },
     { label: "Who I Am", href: "#identity" },
     { label: "What I Bring", href: "#capabilities" },
@@ -9,12 +10,12 @@ const siteContent = {
     { label: "Closing", href: "#closing" },
   ],
   hero: {
-    tagline: "Learning. Impact. Structured Thinking.",
-    title: "I build clarity for complex public systems.",
+    tagline: "Haqdarshak x Prakhar",
+    title: "Structured thinking for last-mile impact.",
     subtitle:
-      "I am Prakhar Bhargava - a governance, product, and strategy operator who likes solving hard public problems by combining on-ground learning, systems thinking, and execution design. Haqdarshak feels like the right place because it sits exactly where those three things matter.",
+      "I am Prakhar Bhargava - a governance, product, and strategy operator who likes solving public-delivery problems by combining on-ground learning, systems thinking, and execution design. This page is my Haqdarshak x Prakhar view of what I believe, what I bring, and how I would build.",
     intro:
-      "My edge is not only what I have done. It is how I think. I naturally use 2 x 2 frameworks, decision trees, timelines, and operating loops to simplify ambiguity, decide faster, and make impact more measurable.",
+      "My edge is not only what I have done. It is how I think. I use 2 x 2 frameworks, decision trees, timelines, and operating loops to simplify ambiguity, make decisions faster, and convert complex systems into clear action.",
     frameworks: [
       "2 x 2 lenses",
       "Decision trees",
@@ -49,6 +50,12 @@ const siteContent = {
         { title: "Build", body: "Translate insight into systems and adoption." },
         { title: "Scale", body: "Track what compounds across teams and geographies." },
       ],
+    },
+    manifesto: {
+      label: "Governing thought",
+      headline: "Learning and impact are my core filters.",
+      body:
+        "The strongest learning happens when the problem is real, the context is messy, and the outcome matters for people. That is why Haqdarshak feels meaningful to me.",
     },
   },
   frameworks: {
