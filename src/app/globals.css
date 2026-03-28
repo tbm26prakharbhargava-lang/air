@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0b0d;
+  --surface: #15171c;
+  --surface-elevated: #1a1c21;
+  --surface-soft: #101217;
+  --foreground: #ffffff;
+  --muted-foreground: #d1d5db;
+  --subtle-foreground: #99a1af;
+  --border: #2a2d34;
+  --yellow: #f5c400;
+  --yellow-strong: #e0b300;
+  --green: #22c55e;
+  --green-strong: #16a34a;
+  --color-bg: #0b0b0d;
+  --color-surface: #15171c;
+  --color-surface-soft: #101217;
+  --color-text: #ffffff;
+  --color-text-muted: #d1d5db;
+  --color-border: #2a2d34;
+  --color-primary: #f5c400;
+  --color-success: #22c55e;
+  --color-ring: #f5c400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(245, 196, 0, 0.14), transparent 24%),
+    radial-gradient(circle at top right, rgba(34, 197, 94, 0.1), transparent 20%),
+    linear-gradient(180deg, #09090b 0%, #0b0b0d 40%, #101217 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
