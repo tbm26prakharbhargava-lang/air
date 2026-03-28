@@ -1,293 +1,416 @@
 const siteContent = {
   nav: [
+    { label: "Frameworks", href: "#frameworks" },
     { label: "Who I Am", href: "#identity" },
     { label: "What I Bring", href: "#capabilities" },
     { label: "Proof", href: "#impact" },
-    { label: "Focus", href: "#focus" },
+    { label: "Timeline", href: "#timeline" },
     { label: "Plan", href: "#roadmap" },
     { label: "Closing", href: "#closing" },
   ],
   hero: {
-    tagline: "Learning. Impact. Scale.",
-    title: "Building last-mile governance systems that actually work.",
+    tagline: "Learning. Impact. Structured Thinking.",
+    title: "I build clarity for complex public systems.",
     subtitle:
-      "I am Prakhar Bhargava - a governance, product, and strategy operator who has spent the last few years working at the intersection of policy intent, field reality, data systems, and execution. This page mirrors the Haqdarshak website structure, but reframes it around what I have done, why I want to join, and what I would build there.",
+      "I am Prakhar Bhargava - a governance, product, and strategy operator who likes solving hard public problems by combining on-ground learning, systems thinking, and execution design. Haqdarshak feels like the right place because it sits exactly where those three things matter.",
+    intro:
+      "My edge is not only what I have done. It is how I think. I naturally use 2 x 2 frameworks, decision trees, timelines, and operating loops to simplify ambiguity, decide faster, and make impact more measurable.",
+    frameworks: [
+      "2 x 2 lenses",
+      "Decision trees",
+      "Timeline logic",
+      "Operating systems",
+    ],
     actions: [
-      { label: "See what I bring", href: "#capabilities", variant: "primary" },
-      { label: "View 3/6/9 month plan", href: "#roadmap", variant: "secondary" },
+      { label: "See my frameworks", href: "#frameworks", variant: "primary" },
+      { label: "See what I bring", href: "#capabilities", variant: "secondary" },
     ],
     panel: {
-      title: "Why Haqdarshak is the right fit",
+      title: "Why Haqdarshak",
       body:
-        "The governing thought behind my application is simple: the highest-quality learning comes from solving real problems at scale, and the most meaningful impact happens when policy, product, and on-ground execution meet. Haqdarshak sits exactly at that junction.",
+        "I want to work where policy intent meets user reality, and where good thinking actually improves access. Haqdarshak does not stop at identifying the problem; it builds systems that help benefits reach people. That is exactly the kind of impact platform I want to build in.",
       signals: [
         {
-          title: "Field reality",
-          body: "1000+ citizen, stakeholder, and political-ground interviews synthesized into action."
+          title: "Field-first",
+          body: "1000+ on-ground interviews and stakeholder conversations synthesized into action.",
         },
         {
-          title: "Governance depth",
-          body: "Worked with Chief Minister-level governance systems, scheme penetration, and policy monitoring."
+          title: "System-led",
+          body: "Dashboards, issue trackers, and decision systems built for real operators.",
         },
         {
-          title: "Product thinking",
-          body: "Built dashboards, automation flows, and MVP blueprints that improved decisions and delivery."
+          title: "Impact-driven",
+          body: "Governance depth, product thinking, and execution discipline in one loop.",
         },
+      ],
+      preview: [
+        { title: "Observe", body: "Go on ground before prescribing." },
+        { title: "Structure", body: "Use frameworks to simplify complexity." },
+        { title: "Build", body: "Translate insight into systems and adoption." },
+        { title: "Scale", body: "Track what compounds across teams and geographies." },
       ],
     },
   },
-  identity: {
-    title: "Who I am as a person, and why I am applying",
+  frameworks: {
+    title: "Frameworks I believe in to understand systems better",
     copy:
-      "I am motivated by hard problems that require first-principles thinking, field immersion, and measurable execution. Across governance consulting, political strategy, product internships, and AI-led projects, the recurring pattern in my work has been to understand people deeply, convert messy reality into structured systems, and push those systems toward better outcomes.",
+      "Whenever I face a messy operating problem, I avoid jumping to solutions. I first ask what kind of problem it is, where it sits in the user or operator journey, and what level of intervention is actually required. These are the lenses I tend to use.",
+    matrix: {
+      title: "My default 2 x 2 for diagnosing problems",
+      xAxis: "Execution complexity ->",
+      yAxis: "Human depth ->",
+      quadrants: [
+        {
+          title: "High human depth / low complexity",
+          body: "Make the experience simpler. Reduce confusion, improve trust, and improve clarity.",
+        },
+        {
+          title: "High human depth / high complexity",
+          body: "Invest in assisted journeys, field immersion, and high-touch problem solving.",
+        },
+        {
+          title: "Low human depth / low complexity",
+          body: "Standardize the workflow, automate repeatable steps, and improve consistency.",
+        },
+        {
+          title: "Low human depth / high complexity",
+          body: "Build dashboards, escalation rules, and operating reviews that manage scale.",
+        },
+      ],
+    },
+    decisionTree: {
+      title: "My decision tree for public-delivery problems",
+      copy:
+        "I usually start by asking where the system breaks: awareness, fit, action, or follow-through. That determines whether the answer is communication, workflow design, training, accountability, or data visibility.",
+      root: "Where is the journey breaking?",
+      branches: [
+        {
+          question: "People do not know enough?",
+          answer: "Fix discovery, communication, and scheme clarity.",
+        },
+        {
+          question: "People know, but cannot act?",
+          answer: "Fix documents, workflows, assisted completion, and guidance.",
+        },
+        {
+          question: "People apply, but nothing moves?",
+          answer: "Fix tracking, escalation, ownership, and response loops.",
+        },
+        {
+          question: "Teams are solving blindly?",
+          answer: "Fix dashboards, taxonomy, metrics, and decision cadence.",
+        },
+      ],
+    },
+    beliefs: [
+      {
+        title: "Go on ground first",
+        body: "The most important system insight usually appears before the spreadsheet does.",
+      },
+      {
+        title: "Make complexity visible",
+        body: "A framework is useful only when it turns confusion into a decision.",
+      },
+      {
+        title: "Design for adoption",
+        body: "A solution works only if real users and real teams can use it consistently.",
+      },
+      {
+        title: "Measure where friction lives",
+        body: "Metrics matter most when they reveal where inclusion is still failing.",
+      },
+    ],
+  },
+  identity: {
+    title: "Who I am as a person and why I am applying",
+    copy:
+      "I am someone who likes learning through real systems, not abstract case studies. Across governance consulting, political strategy, product work, and AI-led projects, the common pattern in my work has been: understand deeply, structure clearly, and execute with ownership. That is also why I want Haqdarshak.",
     cards: [
       {
-        title: "A learner who prefers the field over abstraction",
+        title: "I prefer reality over narrative",
         body:
-          "My strongest learning has come from going on ground, listening before prescribing, and spotting the gap between policy design and user experience. Whether it was understanding welfare uptake, voter sentiment, or support-ticket friction, I have consistently worked from observation to intervention."
+          "Whether it was citizen conversations, political-ground interviews, or user interviews at Swiggy, my instinct has always been to understand what is truly happening beneath the surface.",
       },
       {
-        title: "An operator who likes ambiguity",
+        title: "I naturally think in systems",
         body:
-          "I have handled unclear mandates, created new workstreams, and built structure where none existed. From being appointed the youngest Project Director to owning state-wide dashboards and governance scorecards, I am comfortable moving with speed in high-stakes environments."
+          "I do not only ask what the answer is. I ask what the mechanism is, how the failure repeats, and what operating loop can make the outcome more reliable.",
       },
       {
-        title: "A builder driven by impact",
+        title: "I care about impact with dignity",
         body:
-          "I am applying to Haqdarshak because it is not impact in theory. It is impact translated into access, benefits, inclusion, and livelihoods. The chance to work where technology and human-centered delivery directly shape citizens' outcomes is exactly the kind of problem I want to spend my energy on."
+          "Haqdarshak stands out because it works on the difficult layer between eligibility and actual access. That is where execution, trust, design, and human support all matter.",
       },
     ],
   },
   capabilities: {
-    title: "What I can bring to Haqdarshak's product, strategy, and program stack",
+    title: "What I can bring to the table",
     copy:
-      "The value I bring is not just resume lines - it is a working combination of governance understanding, product sense, analytical rigor, and execution discipline. That combination aligns directly with the kind of cross-functional ownership Haqdarshak's CEO office, strategy, program, and product functions require.",
+      "I can contribute across product, strategy, program management, and CEO-office style problem solving because I have already worked on systems that demanded structure, decision support, and execution under ambiguity.",
     cards: [
       {
-        title: "1. Policy-to-execution translation",
+        title: "Governance and public-system understanding",
         body:
-          "I have already worked on scheme penetration, policy saturation, governance issue-mapping, and implementation tracking. That means I understand how large public systems break down in practice and how to prioritize interventions that improve actual last-mile delivery.",
+          "I have worked on scheme penetration, policy implementation, satisfaction tracking, governance issue-mapping, and ministry-level adoption. That gives me a grounded understanding of how public systems fail and how they can improve.",
         bullets: [
-          "Conceptualized a 12-month governance plan spanning CM satisfaction, scheme penetration, and policy implementation.",
-          "Secured cross-ministry adoption of 36 targeted policies and schemes through 54 governance issue papers.",
-          "Flagged low-uptake blocks and helped improve last-mile delivery by 15% through satisfaction analysis."
+          "54 governance issue papers delivered to Chief Minister-level leadership.",
+          "36 targeted policies and schemes advanced through cross-ministry adoption.",
+          "15% improvement in last-mile delivery by identifying low-uptake blocks.",
         ],
       },
       {
-        title: "2. Product and decision-system thinking",
+        title: "Decision-system and dashboard building",
         body:
-          "I can contribute to a product or strategy team not only by generating ideas, but by designing workflows, dashboards, and evidence loops that make better decisions possible.",
+          "I have repeatedly built products for operators: prediction dashboards, scorecards, issue trackers, and decision systems that help leaders and teams move faster and with more clarity.",
         bullets: [
-          "Built 12 prediction dashboards used by MPs and MLAs as decision-support products.",
-          "Drove 100% leader adoption of digital dashboards integrating issues, schemes, and sentiment signals.",
-          "Designed an AI governance MVP blueprint using STT, GPT-based tagging, vector databases, and automation flows."
+          "12 decision-support dashboards built for political and governance leadership.",
+          "100% leader adoption of integrated digital dashboards in live environments.",
+          "Dashboard rollout cycle cut from 30 days to 10 days through training.",
         ],
       },
       {
-        title: "3. User insight and operational execution",
+        title: "User insight to execution",
         body:
-          "Haqdarshak's strength lies in combining digital systems with ground support. I can add value here because my work has repeatedly depended on converting user signals into operating improvements.",
+          "From large-scale interviews to support-flow redesign and agent enablement, I know how to convert field signals into changes that improve usability, performance, and trust.",
         bullets: [
-          "Conducted large-scale interviews and field analyses to shape decisions across elections, governance, and product.",
-          "Improved support UX and NPS at Swiggy through 85+ user interviews and journey simplification.",
-          "Reduced dashboard implementation time from 30 days to 10 days by training 124 employees and standardizing usage."
+          "85+ user interviews at Swiggy used to simplify support journeys.",
+          "500K+ delivery logs analyzed to identify funnel friction and fix operations.",
+          "Workflow redesign improved warehouse efficiency by 70%.",
         ],
       },
     ],
   },
   impact: {
-    title: "Proof that I can operate at scale and deliver outcomes",
+    title: "Proof that I can execute in high-stakes environments",
     copy:
-      "My resume reflects the same themes Haqdarshak values: large-scale systems, human-centered design, high ownership, and measurable outcomes. These are the proof points I would want any team evaluating me to pay attention to.",
+      "The strongest pattern across my work is consistent: diagnose fast, structure ambiguity, and push toward adoption. The numbers below are not just achievements. They are evidence of how I operate.",
     stats: [
       {
         value: "1000+",
-        label: "Ground signals interpreted",
-        copy:
-          "Interviews, citizen inputs, booth-level feedback loops, and stakeholder conversations used to guide strategy and action."
+        label: "Interviews and ground signals",
+        copy: "Citizen, stakeholder, and field inputs converted into strategy and action.",
       },
       {
         value: "54",
-        label: "Governance papers delivered",
-        copy:
-          "Structured issue papers for Chief Minister-level review, helping move policy conversations toward execution."
+        label: "Governance papers",
+        copy: "Structured papers delivered for high-level policy and execution review.",
       },
       {
         value: "36",
         label: "Policies and schemes advanced",
-        copy:
-          "Cross-ministry policy and scheme adoption enabled through prioritization, tracking, and narrative clarity."
+        copy: "Cross-ministry adoption supported through prioritization and follow-through.",
       },
       {
         value: "15%",
-        label: "Last-mile delivery improvement",
-        copy:
-          "Delivery gains unlocked by analyzing satisfaction data and identifying low-uptake blocks for intervention."
+        label: "Last-mile delivery lift",
+        copy: "Achieved by identifying low-uptake blocks and satisfaction gaps.",
       },
       {
         value: "12",
         label: "Team members led",
-        copy:
-          "Cross-functional ownership over analysts and delivery teams in high-pressure, politically visible environments."
+        copy: "Youngest Project Director leading analysts and delivery workflows.",
       },
       {
         value: "500K+",
-        label: "Operational data points analyzed",
-        copy:
-          "Large operational datasets used to identify friction, improve funnels, and support better product decisions."
+        label: "Operational logs analyzed",
+        copy: "Used for product diagnosis, funnel fixes, and operating visibility.",
       },
       {
         value: "70%",
-        label: "Warehouse efficiency gain",
-        copy:
-          "Process redesign and motion-time analysis at Swiggy translated into meaningful operating efficiency."
+        label: "Efficiency gain",
+        copy: "Process redesign at Swiggy improved warehouse performance materially.",
       },
       {
         value: "10 days",
-        label: "Dashboard deployment cycle",
-        copy:
-          "Reduced implementation turnaround from 30 to 10 days through standardization and user training."
+        label: "Dashboard rollout cycle",
+        copy: "Reduced from 30 days through training and standardization.",
       },
     ],
     bridge:
-      "For Haqdarshak, these are not disconnected achievements. They show that I know how to move from insight to system design to adoption - exactly what is needed in an organization trying to make welfare access more discoverable, more navigable, and more reliable for millions.",
+      "For Haqdarshak, this matters because the role is not only about having ideas. It is about building systems that teams can use and citizens can actually feel.",
+  },
+  timeline: {
+    title: "A timeline of how I have built across governance, product, and systems",
+    copy:
+      "My journey has not been random. Each phase added a different layer to how I think: leadership, operational rigor, public-system understanding, and AI-enabled system design.",
+    items: [
+      {
+        period: "NIT Trichy",
+        title: "Built early leadership and problem-solving muscle",
+        body:
+          "Led teams, founded initiatives, and worked on product and operations challenges that rewarded structured thinking.",
+        tags: ["Leadership", "Problem solving", "Structured thinking"],
+      },
+      {
+        period: "Swiggy",
+        title: "Learned how user research and operational data shape product decisions",
+        body:
+          "Worked on warehouse efficiency, support journeys, real-time dashboards, and funnel improvements.",
+        tags: ["Product", "Ops", "User research"],
+      },
+      {
+        period: "Nation with NaMo",
+        title: "Scaled governance and decision-system execution",
+        body:
+          "Worked with senior political and governance leaders, built dashboards, authored governance papers, and translated on-ground insight into action.",
+        tags: ["Governance", "Dashboards", "Execution"],
+      },
+      {
+        period: "G-Roota.AI",
+        title: "Moved toward AI-enabled public-system design",
+        body:
+          "Explored how AI, tagging, automation, and structured intelligence can improve workflows in governance environments.",
+        tags: ["AI", "Automation", "System design"],
+      },
+      {
+        period: "Why Haqdarshak now",
+        title: "Bring everything together on one meaningful platform",
+        body:
+          "Public systems, citizen access, human-centered execution, and scale come together here in a way that strongly matches how I want to build.",
+        tags: ["Impact", "Scale", "Citizen access"],
+      },
+    ],
   },
   focus: {
-    title: "What I would focus on after joining Haqdarshak",
+    title: "What I would focus on after joining",
     copy:
-      "My focus would be to strengthen the loop between user discovery, eligibility clarity, assisted application completion, and post-application visibility. I would approach the role as someone trying to improve both the citizen experience and the organization's decision quality.",
+      "My first instinct would be to understand the full user and operator journey, then strengthen the exact points where confusion, friction, and lack of visibility are most damaging.",
     cards: [
       {
-        title: "Workstream A: sharpen the user-to-benefit journey",
+        title: "Sharpen citizen discovery and assisted completion",
         body:
-          "I would map the full journey from awareness to application to resolution, identify the biggest drop-off points, and build interventions around trust, clarity, documentation readiness, and assisted completion. The objective would be to reduce friction for both citizens and field agents."
+          "I would look closely at how awareness, eligibility clarity, and documentation readiness influence actual conversion.",
       },
       {
-        title: "Workstream B: strengthen decision systems for scale",
+        title: "Improve field-to-product feedback loops",
         body:
-          "I would build sharper operating reviews for scheme discovery, eligibility accuracy, application throughput, grievance resolution, and partner performance. This would include segment-level dashboards, issue taxonomies, and structured feedback loops from field teams into product and strategy."
+          "I would make sure agent and partner insights are structured, visible, and routed into product and strategy decisions.",
       },
       {
-        title: "Workstream C: identify scalable product wedges",
+        title: "Build decision infrastructure for scale",
         body:
-          "Given my background in governance and AI-enabled systems, I would explore opportunities around multilingual discovery, conversational guidance, assisted documentation workflows, and prioritization models for which schemes or user cohorts need intervention first."
+          "I would create clearer dashboards and operating reviews for funnel health, geography variance, and partner performance.",
       },
       {
-        title: "Workstream D: turn insights into partner-facing strategy",
+        title: "Explore high-leverage AI wedges",
         body:
-          "Haqdarshak's model touches governments, CSR partners, NGOs, and communities. I would help convert field and platform insights into sharper narratives, operating models, and strategic recommendations for external stakeholders as well."
+          "I would assess multilingual discovery, guided workflows, prioritization, and post-application support as scalable interventions.",
       },
     ],
   },
   metrics: {
-    title: "The metrics I would track to know if the system is improving",
+    title: "Metrics I would track",
     copy:
-      "I would not look at impact as a vague story. I would measure the full operating funnel and use metrics as a way to identify where inclusion is breaking down.",
+      "I would use metrics as a way to understand where the citizen journey is improving and where the organization is still operating without enough clarity.",
     items: [
       {
-        title: "Discovery conversion",
-        body: "How many users entering the system actually find one or more high-fit schemes?"
+        title: "Discovery to eligibility",
+        body: "How many incoming users are matched to one or more relevant opportunities?",
       },
       {
-        title: "Eligibility precision",
-        body: "How accurately does the platform or field process identify relevant schemes for each user profile?"
+        title: "Application completion",
+        body: "How many promising cases actually become completed submissions?",
       },
       {
-        title: "Application completion rate",
-        body: "What share of discovered opportunities convert into fully submitted applications?"
+        title: "Time to resolution",
+        body: "How long does it take to move from first contact to access or closure?",
       },
       {
-        title: "Time to benefit access",
-        body: "How long does it take from first engagement to successful access or resolution?"
+        title: "Drop-off stage",
+        body: "At what exact stage do users stop: awareness, documents, verification, or follow-up?",
       },
       {
-        title: "Drop-off by stage",
-        body: "Where are citizens exiting: awareness, documentation, verification, submission, or follow-up?"
+        title: "Agent productivity",
+        body: "Which support patterns correlate with better throughput and better success quality?",
       },
       {
-        title: "Agent productivity and quality",
-        body: "How many high-quality cases does each field worker handle, and with what success rate?"
+        title: "Geography variance",
+        body: "Which districts or partner channels show the strongest and weakest outcomes?",
       },
       {
-        title: "Partner and geography variance",
-        body: "Which states, districts, blocks, or partners perform best and worst, and why?"
+        title: "Redressal health",
+        body: "Are open issues being surfaced, escalated, and resolved with visibility?",
       },
       {
-        title: "User trust and redressal resolution",
-        body: "Are grievances being resolved transparently, and do users feel guided rather than abandoned?"
+        title: "User trust",
+        body: "Do users feel supported, informed, and confident through the journey?",
       },
     ],
   },
   roadmap: {
-    title: "How I would structure my first 3 / 6 / 9 months",
+    title: "How I would structure my 3 / 6 / 9 months",
     copy:
-      "The plan below is how I would approach impact at Haqdarshak: first understand deeply, then improve critical systems, then build scale mechanisms that compound over time.",
+      "My approach would be to learn deeply first, then fix the critical bottlenecks, and then convert what works into repeatable systems that scale.",
     cards: [
       {
         stage: "0-3 months",
-        title: "Learn the system end to end",
+        title: "Understand the live operating reality",
         body:
-          "Build context quickly by spending time with product, field teams, partners, and users. The goal is not to start by prescribing solutions, but by understanding the operating truth.",
+          "Spend time across product, field teams, partners, data, and users to build a shared picture of where the system is strongest and weakest.",
         bullets: [
-          "Shadow the full citizen and agent journey across discovery, application, and post-submission support.",
-          "Review data, dashboards, scheme maps, grievance patterns, and regional performance variance.",
-          "Identify top 5 friction points in the benefits funnel and create a shared problem statement."
+          "Map the full citizen and agent journey.",
+          "Review scheme, grievance, and performance data.",
+          "Define the top operating bottlenecks with clarity.",
         ],
       },
       {
         stage: "3-6 months",
-        title: "Fix high-impact bottlenecks and create decision cadence",
+        title: "Fix the biggest friction points",
         body:
-          "Translate diagnosis into sharper execution. Prioritize interventions that improve conversion, visibility, and quality without overcomplicating the stack.",
+          "Prioritize the few interventions that most improve conversion, clarity, and visibility across the benefits funnel.",
         bullets: [
-          "Launch a dashboard or review system for funnel health, drop-offs, and state/partner comparisons.",
-          "Pilot 2-3 product or program improvements around user guidance, documentation readiness, or agent workflows.",
-          "Create a regular problem-escalation loop between field teams, product, and strategy."
+          "Launch a sharper review cadence and dashboard layer.",
+          "Pilot improvements in guidance, workflow, or tracking.",
+          "Create a clean field-to-product escalation loop.",
         ],
       },
       {
         stage: "6-9 months",
-        title: "Build repeatable systems for scale",
+        title: "Turn wins into repeatable scale systems",
         body:
-          "Once the basics are visible and improving, the next step is to turn wins into repeatable playbooks that can travel across regions, partners, and use cases.",
+          "Codify the playbooks, automation layers, and decision rules that let Haqdarshak scale quality, not just volume.",
         bullets: [
-          "Codify playbooks for issue diagnosis, intervention design, and field-to-product insight transfer.",
-          "Propose scalable AI or automation layers for multilingual support, prioritization, or post-application follow-up.",
-          "Help leadership identify the next strategic wedge: geography expansion, partner deployment, or product depth."
+          "Document repeatable intervention playbooks.",
+          "Propose high-leverage AI-enabled features.",
+          "Support the next wave of product or geography scale.",
         ],
       },
     ],
   },
   closing: {
-    title: "I want to build where execution meets dignity",
+    title: "I want to build where insight becomes access",
     copy:
-      "What excites me about Haqdarshak is that the organization treats access not as a transaction, but as a systems problem with human consequences. I want to contribute because I have already seen how often people lose out not because policy is absent, but because the system is hard to navigate. My intent is to help make that system clearer, faster, more trustworthy, and more scalable.",
+      "What excites me about Haqdarshak is that it treats access as a system design challenge with human consequences. I would come in not only to contribute ideas, but to help build better systems for citizens, field teams, and decision-makers.",
     points: [
       {
-        title: "What I offer",
-        body: "A rare combination of governance context, analytical depth, product thinking, and field-grounded execution."
+        title: "Who I am",
+        body: "A structured thinker who learns fast from the field.",
       },
       {
-        title: "How I would approach the role",
-        body: "Start with listening, move to diagnosis, then build operating systems that make good decisions repeatable."
+        title: "What I bring",
+        body: "Governance depth, product thinking, and execution discipline.",
       },
       {
-        title: "What success would mean",
-        body: "More people actually accessing the benefits they deserve, with less friction and more confidence in the journey."
+        title: "What I want to do",
+        body: "Make access systems clearer, faster, and more reliable at scale.",
       },
       {
-        title: "Why now",
-        body: "Because this is the stage where I want to learn by owning real impact, and Haqdarshak is one of the best places to do exactly that."
+        title: "Why this matters",
+        body: "Because better systems do not just improve metrics - they improve lives.",
       },
     ],
   },
   footer:
-    "Built as a Haqdarshak-inspired resume website for Prakhar Bhargava. Replace any copy in script.js to personalize it further.",
+    "Built as a Haqdarshak-inspired application website for Prakhar Bhargava. Add a local image named profile-photo.png in the project root to replace the hero placeholder.",
 };
 
 function setText(id, value) {
   const node = document.getElementById(id);
   if (node) node.textContent = value;
+}
+
+function appendChildren(target, nodes) {
+  nodes.forEach((node) => target.appendChild(node));
 }
 
 function createCard({ title, body, bullets = [] }, className = "content-card") {
@@ -296,11 +419,11 @@ function createCard({ title, body, bullets = [] }, className = "content-card") {
 
   const heading = document.createElement("h3");
   heading.textContent = title;
-  card.appendChild(heading);
 
   const copy = document.createElement("p");
   copy.textContent = body;
-  card.appendChild(copy);
+
+  appendChildren(card, [heading, copy]);
 
   if (bullets.length) {
     const list = document.createElement("ul");
@@ -330,8 +453,17 @@ function renderHero() {
   setText("hero-tagline", hero.tagline);
   setText("hero-title", hero.title);
   setText("hero-subtitle", hero.subtitle);
+  setText("hero-intro", hero.intro);
   setText("hero-panel-title", hero.panel.title);
   setText("hero-panel-body", hero.panel.body);
+
+  const pillWrap = document.getElementById("hero-framework-pills");
+  hero.frameworks.forEach((item) => {
+    const pill = document.createElement("span");
+    pill.className = "framework-pill";
+    pill.textContent = item;
+    pillWrap.appendChild(pill);
+  });
 
   const actionWrap = document.getElementById("hero-actions");
   hero.actions.forEach((action) => {
@@ -348,6 +480,68 @@ function renderHero() {
     item.className = "signal-item";
     item.innerHTML = `<strong>${signal.title}</strong><span>${signal.body}</span>`;
     signals.appendChild(item);
+  });
+
+  const preview = document.getElementById("hero-framework-preview");
+  hero.panel.preview.forEach((item) => {
+    const cell = document.createElement("div");
+    cell.className = "preview-cell";
+    cell.innerHTML = `<strong>${item.title}</strong><span>${item.body}</span>`;
+    preview.appendChild(cell);
+  });
+
+  const photo = document.getElementById("hero-photo");
+  const fallback = document.getElementById("photo-fallback");
+  photo.addEventListener("error", () => {
+    photo.style.display = "none";
+    fallback.style.display = "flex";
+  });
+  photo.addEventListener("load", () => {
+    fallback.style.display = "none";
+    photo.style.display = "block";
+  });
+}
+
+function renderFrameworks() {
+  const { frameworks } = siteContent;
+  setText("frameworks-title", frameworks.title);
+  setText("frameworks-copy", frameworks.copy);
+  setText("matrix-title", frameworks.matrix.title);
+  setText("matrix-x-axis", frameworks.matrix.xAxis);
+  setText("matrix-y-axis", frameworks.matrix.yAxis);
+  setText("decision-title", frameworks.decisionTree.title);
+  setText("decision-copy", frameworks.decisionTree.copy);
+
+  const matrixGrid = document.getElementById("matrix-grid");
+  frameworks.matrix.quadrants.forEach((quadrant) => {
+    const cell = document.createElement("div");
+    cell.className = "matrix-cell";
+    cell.innerHTML = `<strong>${quadrant.title}</strong><span>${quadrant.body}</span>`;
+    matrixGrid.appendChild(cell);
+  });
+
+  const tree = document.getElementById("decision-tree");
+  const root = document.createElement("div");
+  root.className = "tree-root";
+  root.innerHTML = `<strong>Root question</strong><span>${frameworks.decisionTree.root}</span>`;
+  tree.appendChild(root);
+
+  const branchWrap = document.createElement("div");
+  branchWrap.className = "tree-branches";
+  frameworks.decisionTree.branches.forEach((branch) => {
+    const node = document.createElement("div");
+    node.className = "tree-branch";
+    node.innerHTML = `<strong>${branch.question}</strong><span>${branch.answer}</span>`;
+    branchWrap.appendChild(node);
+  });
+  tree.appendChild(branchWrap);
+
+  const beliefGrid = document.getElementById("belief-pill-grid");
+  frameworks.beliefs.forEach((belief) => {
+    const pill = document.createElement("div");
+    pill.className = "belief-pill";
+    pill.innerHTML = `<strong>${belief.title}</strong><span>${belief.body}</span>`;
+    beliefGrid.appendChild(pill);
   });
 }
 
@@ -376,6 +570,36 @@ function renderImpact() {
       <p class="stat-copy">${stat.copy}</p>
     `;
     stats.appendChild(card);
+  });
+}
+
+function renderTimeline() {
+  const { timeline } = siteContent;
+  setText("timeline-title", timeline.title);
+  setText("timeline-copy", timeline.copy);
+
+  const wrap = document.getElementById("timeline-list");
+  timeline.items.forEach((item, index) => {
+    const row = document.createElement("article");
+    row.className = "timeline-item";
+
+    const tags =
+      item.tags?.length
+        ? `<div class="timeline-tags">${item.tags
+            .map((tag) => `<span class="timeline-tag">${tag}</span>`)
+            .join("")}</div>`
+        : "";
+
+    row.innerHTML = `
+      <div class="timeline-marker">${index + 1}</div>
+      <div class="timeline-content">
+        <span class="timeline-period">${item.period}</span>
+        <h3>${item.title}</h3>
+        <p>${item.body}</p>
+        ${tags}
+      </div>
+    `;
+    wrap.appendChild(row);
   });
 }
 
@@ -436,17 +660,45 @@ function renderClosing() {
   });
 }
 
+function enableTilt() {
+  const heroVisual = document.getElementById("hero-visual");
+  if (!heroVisual) return;
+
+  const layers = heroVisual.querySelectorAll(".tilt-layer");
+  heroVisual.addEventListener("mousemove", (event) => {
+    const bounds = heroVisual.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    layers.forEach((layer, index) => {
+      const depth = (index + 1) * 7;
+      layer.style.transform =
+        `translate3d(${x * depth}px, ${y * depth}px, 0) ` +
+        `rotateY(${x * 9}deg) rotateX(${y * -8}deg)`;
+    });
+  });
+
+  heroVisual.addEventListener("mouseleave", () => {
+    layers.forEach((layer) => {
+      layer.style.transform = "";
+    });
+  });
+}
+
 function init() {
   renderNav();
   renderHero();
+  renderFrameworks();
   renderSection("identity", "identity-title", "identity-copy", "identity-cards");
   renderSection("capabilities", "capabilities-title", "capabilities-copy", "capability-cards");
   renderImpact();
+  renderTimeline();
   renderSection("focus", "focus-title", "focus-copy", "focus-cards");
   renderMetrics();
   renderRoadmap();
   renderClosing();
   setText("footer-note", siteContent.footer);
+  enableTilt();
 }
 
 init();

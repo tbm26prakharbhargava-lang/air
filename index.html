@@ -30,24 +30,92 @@
       </header>
 
       <main id="top">
-        <section class="hero section">
+        <section class="hero section" id="hero">
           <div class="hero-copy">
             <p class="eyebrow" id="hero-tagline"></p>
             <h1 id="hero-title"></h1>
             <p class="hero-subtitle" id="hero-subtitle"></p>
+            <div class="hero-intro-card">
+              <p class="eyebrow">Overall intro</p>
+              <p id="hero-intro"></p>
+            </div>
+            <div class="hero-framework-pills" id="hero-framework-pills"></div>
             <div class="hero-actions" id="hero-actions"></div>
           </div>
-          <aside class="hero-panel">
-            <p class="eyebrow">Core thesis</p>
-            <h2 id="hero-panel-title"></h2>
-            <p id="hero-panel-body"></p>
-            <div class="hero-signal-list" id="hero-signals"></div>
-          </aside>
+
+          <div class="hero-visual" id="hero-visual">
+            <div class="hero-orb hero-orb-one"></div>
+            <div class="hero-orb hero-orb-two"></div>
+            <div class="portrait-card tilt-layer">
+              <div class="portrait-glow"></div>
+              <img
+                id="hero-photo"
+                class="hero-photo"
+                src="./profile-photo.png"
+                alt="Portrait of Prakhar Bhargava"
+              />
+              <div class="photo-fallback" id="photo-fallback">
+                <span>Drop your PNG here</span>
+                <strong>profile-photo.png</strong>
+              </div>
+            </div>
+
+            <article class="floating-card insight-card tilt-layer">
+              <p class="eyebrow">Core thesis</p>
+              <h2 id="hero-panel-title"></h2>
+              <p id="hero-panel-body"></p>
+            </article>
+
+            <article class="floating-card mini-card tilt-layer">
+              <p class="eyebrow">How I think</p>
+              <div class="mini-card-grid" id="hero-signals"></div>
+            </article>
+
+            <article class="floating-card framework-preview tilt-layer">
+              <p class="eyebrow">Decision lens</p>
+              <div class="framework-preview-grid" id="hero-framework-preview"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section frameworks-section" id="frameworks">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">01. Frameworks I believe in</p>
+              <h2 id="frameworks-title"></h2>
+            </div>
+            <p id="frameworks-copy"></p>
+          </div>
+
+          <div class="frameworks-layout">
+            <article class="matrix-card">
+              <div class="card-header">
+                <p class="eyebrow">2 x 2 lens</p>
+                <h3 id="matrix-title"></h3>
+              </div>
+              <div class="matrix-chart">
+                <span class="axis axis-y" id="matrix-y-axis"></span>
+                <span class="axis axis-x" id="matrix-x-axis"></span>
+                <div class="matrix-grid" id="matrix-grid"></div>
+              </div>
+            </article>
+
+            <article class="decision-tree-card">
+              <div class="card-header">
+                <p class="eyebrow">Decision tree</p>
+                <h3 id="decision-title"></h3>
+                <p id="decision-copy"></p>
+              </div>
+              <div class="decision-tree" id="decision-tree"></div>
+            </article>
+          </div>
+
+          <div class="belief-pill-grid" id="belief-pill-grid"></div>
         </section>
 
         <section class="section" id="identity">
           <div class="section-heading">
-            <p class="eyebrow">01. Who I am</p>
+            <p class="eyebrow">02. Who I am</p>
             <h2 id="identity-title"></h2>
             <p id="identity-copy"></p>
           </div>
@@ -56,7 +124,7 @@
 
         <section class="section" id="capabilities">
           <div class="section-heading narrow">
-            <p class="eyebrow">02. What I bring to the table</p>
+            <p class="eyebrow">03. What I bring to the table</p>
             <h2 id="capabilities-title"></h2>
             <p id="capabilities-copy"></p>
           </div>
@@ -66,7 +134,7 @@
         <section class="section impact-section" id="impact">
           <div class="section-heading split">
             <div>
-              <p class="eyebrow">03. Proof of execution</p>
+              <p class="eyebrow">04. Proof of execution</p>
               <h2 id="impact-title"></h2>
             </div>
             <p id="impact-copy"></p>
@@ -78,9 +146,20 @@
           </div>
         </section>
 
+        <section class="section timeline-section" id="timeline">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">05. Timeline of how I have built</p>
+              <h2 id="timeline-title"></h2>
+            </div>
+            <p id="timeline-copy"></p>
+          </div>
+          <div class="timeline-list" id="timeline-list"></div>
+        </section>
+
         <section class="section" id="focus">
           <div class="section-heading">
-            <p class="eyebrow">04. What I will focus on</p>
+            <p class="eyebrow">06. What I will focus on</p>
             <h2 id="focus-title"></h2>
             <p id="focus-copy"></p>
           </div>
@@ -90,7 +169,7 @@
         <section class="section" id="metrics">
           <div class="section-heading split">
             <div>
-              <p class="eyebrow">05. Metrics I would watch</p>
+              <p class="eyebrow">07. Metrics I would watch</p>
               <h2 id="metrics-title"></h2>
             </div>
             <p id="metrics-copy"></p>
@@ -100,7 +179,7 @@
 
         <section class="section roadmap-section" id="roadmap">
           <div class="section-heading narrow">
-            <p class="eyebrow">06. 3 / 6 / 9 month plan</p>
+            <p class="eyebrow">08. 3 / 6 / 9 month plan</p>
             <h2 id="roadmap-title"></h2>
             <p id="roadmap-copy"></p>
           </div>
@@ -109,7 +188,7 @@
 
         <section class="section closing-section" id="closing">
           <div class="closing-card">
-            <p class="eyebrow">07. Final closing thought</p>
+            <p class="eyebrow">09. Final closing thought</p>
             <h2 id="closing-title"></h2>
             <p id="closing-copy"></p>
             <div class="closing-points" id="closing-points"></div>
