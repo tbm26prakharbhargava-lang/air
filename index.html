@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prakhar Bhargava | Haqdarshak Fit Story</title>
+    <meta
+      name="description"
+      content="A Haqdarshak-inspired personal application website for Prakhar Bhargava."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <span class="brand-mark">PB</span>
+          <div>
+            <p class="eyebrow">Application Story</p>
+            <a class="brand-name" href="#top">Prakhar Bhargava</a>
+          </div>
+        </div>
+        <nav class="site-nav" id="site-nav"></nav>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-tagline"></p>
+            <h1 id="hero-title"></h1>
+            <p class="hero-subtitle" id="hero-subtitle"></p>
+            <div class="hero-actions" id="hero-actions"></div>
+          </div>
+          <aside class="hero-panel">
+            <p class="eyebrow">Core thesis</p>
+            <h2 id="hero-panel-title"></h2>
+            <p id="hero-panel-body"></p>
+            <div class="hero-signal-list" id="hero-signals"></div>
+          </aside>
+        </section>
+
+        <section class="section" id="identity">
+          <div class="section-heading">
+            <p class="eyebrow">01. Who I am</p>
+            <h2 id="identity-title"></h2>
+            <p id="identity-copy"></p>
+          </div>
+          <div class="card-grid triple" id="identity-cards"></div>
+        </section>
+
+        <section class="section" id="capabilities">
+          <div class="section-heading narrow">
+            <p class="eyebrow">02. What I bring to the table</p>
+            <h2 id="capabilities-title"></h2>
+            <p id="capabilities-copy"></p>
+          </div>
+          <div class="card-grid triple" id="capability-cards"></div>
+        </section>
+
+        <section class="section impact-section" id="impact">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">03. Proof of execution</p>
+              <h2 id="impact-title"></h2>
+            </div>
+            <p id="impact-copy"></p>
+          </div>
+          <div class="stats-grid" id="impact-stats"></div>
+          <div class="quote-card">
+            <p class="eyebrow">Why this matters for Haqdarshak</p>
+            <p id="impact-bridge"></p>
+          </div>
+        </section>
+
+        <section class="section" id="focus">
+          <div class="section-heading">
+            <p class="eyebrow">04. What I will focus on</p>
+            <h2 id="focus-title"></h2>
+            <p id="focus-copy"></p>
+          </div>
+          <div class="card-grid dual" id="focus-cards"></div>
+        </section>
+
+        <section class="section" id="metrics">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">05. Metrics I would watch</p>
+              <h2 id="metrics-title"></h2>
+            </div>
+            <p id="metrics-copy"></p>
+          </div>
+          <div class="pill-grid" id="metrics-list"></div>
+        </section>
+
+        <section class="section roadmap-section" id="roadmap">
+          <div class="section-heading narrow">
+            <p class="eyebrow">06. 3 / 6 / 9 month plan</p>
+            <h2 id="roadmap-title"></h2>
+            <p id="roadmap-copy"></p>
+          </div>
+          <div class="card-grid triple" id="roadmap-cards"></div>
+        </section>
+
+        <section class="section closing-section" id="closing">
+          <div class="closing-card">
+            <p class="eyebrow">07. Final closing thought</p>
+            <h2 id="closing-title"></h2>
+            <p id="closing-copy"></p>
+            <div class="closing-points" id="closing-points"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p id="footer-note"></p>
+        <p class="footer-tip">
+          Tip: all copy lives inside <code>script.js</code>, so you can rewrite the website
+          without touching the layout.
+        </p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
