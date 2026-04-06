@@ -239,23 +239,6 @@ main {
   line-height: 1.5;
 }
 
-.hero-framework-line {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero-framework-line p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.84);
-  font-size: 0.96rem;
-  line-height: 1.7;
-}
-
-.hero-framework-line strong {
-  color: #fff;
-}
-
 .hero-metrics-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -323,11 +306,14 @@ main {
 .hero-visual {
   position: relative;
   min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-gradient-field {
   position: absolute;
-  inset: 48px 18px 76px 90px;
+  inset: 36px 24px 36px 96px;
   border-radius: 36px;
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 120, 179, 0.26), transparent 28%),
@@ -337,9 +323,7 @@ main {
 }
 
 .avatar-shell {
-  position: absolute;
-  right: 72px;
-  top: 38px;
+  position: relative;
   width: 360px;
   height: 500px;
   transform-origin: center center;
@@ -381,30 +365,6 @@ main {
   top: -26px;
   left: -74px;
   opacity: 0.45;
-}
-
-.hero-note-card {
-  position: absolute;
-  left: 0;
-  bottom: 36px;
-  width: 260px;
-  padding: 22px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  transition: transform 0.18s ease-out;
-}
-
-.hero-note-card h2 {
-  margin: 10px 0 10px;
-  font-size: 1.8rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.hero-note-card p:last-child {
-  margin: 0;
 }
 
 .metric-pill,
@@ -462,12 +422,6 @@ main {
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
   gap: 18px;
   margin-bottom: 18px;
-}
-
-.frameworks-section {
-  background:
-    radial-gradient(circle at top right, rgba(255, 120, 179, 0.12), transparent 22%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
 }
 
 .matrix-card,
@@ -810,14 +764,12 @@ code {
 
 @media (max-width: 1080px) {
   .hero,
-  .frameworks-layout,
   .section-heading.split,
   .card-grid.triple,
   .card-grid.dual,
   .stats-grid,
   .pill-grid,
-  .closing-points,
-  .belief-pill-grid {
+  .closing-points {
     grid-template-columns: 1fr;
   }
 
@@ -843,10 +795,6 @@ code {
     transform: translateX(50%);
   }
 
-  .hero-note-card {
-    left: 24px;
-    bottom: 24px;
-  }
 }
 
 @media (max-width: 720px) {
@@ -914,14 +862,6 @@ code {
     top: 2px;
   }
 
-  .hero-note-card {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: auto;
-    margin-top: 18px;
-    transform: none !important;
-  }
 
   .timeline-item {
     grid-template-columns: 40px minmax(0, 1fr);

@@ -1,7 +1,6 @@
 const siteContent = {
   nav: [
     { label: "Home", href: "#hero" },
-    { label: "Frameworks", href: "#frameworks" },
     { label: "Who I Am", href: "#identity" },
     { label: "What I Bring", href: "#capabilities" },
     { label: "Proof", href: "#impact" },
@@ -14,27 +13,21 @@ const siteContent = {
     name: "Prakhar Bhargava",
     role: "Structured thinker for public systems, last-mile execution, and impact at scale.",
     brief:
-      "I am applying to Haqdarshak because my strongest work has lived at the exact intersection it operates in: governance, field learning, product thinking, and execution design. I like turning complexity into structure so teams can move faster and outcomes can reach people better.",
+      "My strongest work has lived at the intersection of governance, field learning, product thinking, and execution design. I like turning complexity into structure so teams can move faster and outcomes can reach people better.",
     pointers: [
       {
         label: "Current",
         value: "PGP in Technology & Business Management, Masters' Union",
       },
       {
-        label: "Standing",
-        value: "Dean's List | Rank 6",
-      },
-      {
         label: "Former",
         value: "Senior Political & Governance Consultant, Nation with NaMo",
       },
       {
-        label: "Built in",
+        label: "Former",
         value: "APM, Swiggy | Mechanical Engineer, NIT Trichy",
       },
     ],
-    frameworkLine:
-      "2 x 2 lenses, decision trees, timelines, and operating reviews to simplify ambiguity and sharpen action.",
     metrics: [
       { value: "1000+", label: "Ground interviews" },
       { value: "54", label: "Governance papers" },
@@ -42,89 +35,14 @@ const siteContent = {
       { value: "15%", label: "Delivery lift" },
     ],
     actions: [
-      { label: "See my frameworks", href: "#frameworks", variant: "primary" },
-      { label: "See what I bring", href: "#capabilities", variant: "secondary" },
-    ],
-    panel: {
-      title: "Why Haqdarshak",
-      body:
-        "Haqdarshak solves the exact kind of problem I care about: how policy intent becomes real access. It combines welfare understanding, field execution, and systems thinking in one platform - and that is the environment where I believe I can contribute most meaningfully.",
-    },
-  },
-  frameworks: {
-    title: "Frameworks I believe in to understand systems better",
-    copy:
-      "Whenever I face a messy operating problem, I avoid jumping to solutions. I first ask what kind of problem it is, where it sits in the user or operator journey, and what level of intervention is actually required. These are the lenses I tend to use.",
-    matrix: {
-      title: "My default 2 x 2 for diagnosing problems",
-      xAxis: "Execution complexity ->",
-      yAxis: "Human depth ->",
-      quadrants: [
-        {
-          title: "High human depth / low complexity",
-          body: "Make the experience simpler. Reduce confusion, improve trust, and improve clarity.",
-        },
-        {
-          title: "High human depth / high complexity",
-          body: "Invest in assisted journeys, field immersion, and high-touch problem solving.",
-        },
-        {
-          title: "Low human depth / low complexity",
-          body: "Standardize the workflow, automate repeatable steps, and improve consistency.",
-        },
-        {
-          title: "Low human depth / high complexity",
-          body: "Build dashboards, escalation rules, and operating reviews that manage scale.",
-        },
-      ],
-    },
-    decisionTree: {
-      title: "My decision tree for public-delivery problems",
-      copy:
-        "I usually start by asking where the system breaks: awareness, fit, action, or follow-through. That determines whether the answer is communication, workflow design, training, accountability, or data visibility.",
-      root: "Where is the journey breaking?",
-      branches: [
-        {
-          question: "People do not know enough?",
-          answer: "Fix discovery, communication, and scheme clarity.",
-        },
-        {
-          question: "People know, but cannot act?",
-          answer: "Fix documents, workflows, assisted completion, and guidance.",
-        },
-        {
-          question: "People apply, but nothing moves?",
-          answer: "Fix tracking, escalation, ownership, and response loops.",
-        },
-        {
-          question: "Teams are solving blindly?",
-          answer: "Fix dashboards, taxonomy, metrics, and decision cadence.",
-        },
-      ],
-    },
-    beliefs: [
-      {
-        title: "Go on ground first",
-        body: "The most important system insight usually appears before the spreadsheet does.",
-      },
-      {
-        title: "Make complexity visible",
-        body: "A framework is useful only when it turns confusion into a decision.",
-      },
-      {
-        title: "Design for adoption",
-        body: "A solution works only if real users and real teams can use it consistently.",
-      },
-      {
-        title: "Measure where friction lives",
-        body: "Metrics matter most when they reveal where inclusion is still failing.",
-      },
+      { label: "See what I bring", href: "#capabilities", variant: "primary" },
+      { label: "See proof of work", href: "#impact", variant: "secondary" },
     ],
   },
   identity: {
     title: "Who I am as a person and why I am applying",
     copy:
-      "I am someone who likes learning through real systems, not abstract case studies. Across governance consulting, political strategy, product work, and AI-led projects, the common pattern in my work has been: understand deeply, structure clearly, and execute with ownership. That is also why I want Haqdarshak.",
+      "I am someone who likes learning through real systems, not abstract case studies. Across governance consulting, political strategy, product work, and AI-led projects, the common pattern in my work has been: understand deeply, structure clearly, and execute with ownership.",
     cards: [
       {
         title: "I prefer reality over narrative",
@@ -454,9 +372,6 @@ function renderHero() {
   setText("hero-name", hero.name);
   setText("hero-role", hero.role);
   setText("hero-brief", hero.brief);
-  setText("hero-framework-line", hero.frameworkLine);
-  setText("hero-panel-title", hero.panel.title);
-  setText("hero-panel-body", hero.panel.body);
 
   const pointerWrap = document.getElementById("hero-pointer-grid");
   hero.pointers.forEach((item) => {
@@ -481,49 +396,6 @@ function renderHero() {
     link.className = `button-link ${action.variant}`;
     link.textContent = action.label;
     actionWrap.appendChild(link);
-  });
-}
-
-function renderFrameworks() {
-  const { frameworks } = siteContent;
-  setText("frameworks-title", frameworks.title);
-  setText("frameworks-copy", frameworks.copy);
-  setText("matrix-title", frameworks.matrix.title);
-  setText("matrix-x-axis", frameworks.matrix.xAxis);
-  setText("matrix-y-axis", frameworks.matrix.yAxis);
-  setText("decision-title", frameworks.decisionTree.title);
-  setText("decision-copy", frameworks.decisionTree.copy);
-
-  const matrixGrid = document.getElementById("matrix-grid");
-  frameworks.matrix.quadrants.forEach((quadrant) => {
-    const cell = document.createElement("div");
-    cell.className = "matrix-cell";
-    cell.innerHTML = `<strong>${quadrant.title}</strong><span>${quadrant.body}</span>`;
-    matrixGrid.appendChild(cell);
-  });
-
-  const tree = document.getElementById("decision-tree");
-  const root = document.createElement("div");
-  root.className = "tree-root";
-  root.innerHTML = `<strong>Root question</strong><span>${frameworks.decisionTree.root}</span>`;
-  tree.appendChild(root);
-
-  const branchWrap = document.createElement("div");
-  branchWrap.className = "tree-branches";
-  frameworks.decisionTree.branches.forEach((branch) => {
-    const node = document.createElement("div");
-    node.className = "tree-branch";
-    node.innerHTML = `<strong>${branch.question}</strong><span>${branch.answer}</span>`;
-    branchWrap.appendChild(node);
-  });
-  tree.appendChild(branchWrap);
-
-  const beliefGrid = document.getElementById("belief-pill-grid");
-  frameworks.beliefs.forEach((belief) => {
-    const pill = document.createElement("div");
-    pill.className = "belief-pill";
-    pill.innerHTML = `<strong>${belief.title}</strong><span>${belief.body}</span>`;
-    beliefGrid.appendChild(pill);
   });
 }
 
@@ -668,7 +540,6 @@ function enableHeroMotion() {
 function init() {
   renderNav();
   renderHero();
-  renderFrameworks();
   renderSection("identity", "identity-title", "identity-copy", "identity-cards");
   renderSection("capabilities", "capabilities-title", "capabilities-copy", "capability-cards");
   renderImpact();
