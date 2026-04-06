@@ -1,8 +1,41 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
+import type { Circle, Recommendation, UserProfile } from "@/lib/matching/types";
 
-export function Hero() {
+type HeroProps = {
+  activeUser: UserProfile;
+  personaSummary: string;
+  topCircle?: Recommendation<Circle>;
+};
+
+export function Hero({ activeUser, personaSummary, topCircle }: HeroProps) {
+  const topCircleLabel = topCircle?.entity.name ?? "Gurgaon PM Badminton Circle";
+  const topCircleMeta = topCircle
+    ? `${topCircle.entity.schedule.join(" / ")} • ${topCircle.entity.location.locality} • ${topCircle.entity.health.activeMembersCount} likely repeat participants`
+    : "Wed 7 PM • Sector 56 • 8 people likely to attend";
+  const reasonChips =
+    topCircle?.reasons.slice(0, 3).map((reason) => (
+      <Chip
+        key={reason.label}
+        tone={
+          reason.tone === "positive"
+            ? "green"
+            : reason.tone === "highlight"
+              ? "yellow"
+              : "default"
+        }
+      >
+        {reason.label}
+      </Chip>
+    )) ?? [
+      <Chip key="attendance" tone="green">
+        High attendance
+      </Chip>,
+      <Chip key="peers">Professional peers</Chip>,
+      <Chip key="fit">Evening fit</Chip>,
+    ];
+
   return (
     <section className="grid gap-8 rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(245,196,0,0.18),_transparent_32%),linear-gradient(180deg,rgba(26,28,33,0.95),rgba(11,11,13,0.98))] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.35)] lg:grid-cols-[1.35fr_0.95fr] lg:p-10">
       <div className="space-y-6">
@@ -24,6 +57,11 @@ export function Hero() {
             schedule fit, behavior, and preferences. Agents moderate groups,
             run surveys, and keep communities healthy between events.
           </p>
+          <p className="max-w-2xl text-sm leading-7 text-zinc-400">
+            Live profile for <span className="font-semibold text-white">{activeUser.name}</span>:{" "}
+            {activeUser.location.locality}, {activeUser.location.city} •{" "}
+            {activeUser.intentModes.join(" / ")}
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
@@ -44,8 +82,7 @@ export function Hero() {
             AI summary
           </div>
           <p className="text-sm leading-7 text-zinc-300">
-            You look like a structured evening-sports user who prefers small
-            groups, reliable attendance, and thoughtful people nearby.
+            {personaSummary}
           </p>
         </div>
 
@@ -55,15 +92,13 @@ export function Hero() {
           </p>
           <div className="mt-2 space-y-2">
             <p className="text-lg font-semibold text-white">
-              Gurgaon PM Badminton Circle
+              {topCircleLabel}
             </p>
             <p className="text-sm text-zinc-300">
-              Wed 7 PM • Sector 56 • 8 people likely to attend
+              {topCircleMeta}
             </p>
             <div className="flex flex-wrap gap-2">
-              <Chip tone="green">High attendance</Chip>
-              <Chip>Professional peers</Chip>
-              <Chip>Evening fit</Chip>
+              {reasonChips}
             </div>
           </div>
         </div>
