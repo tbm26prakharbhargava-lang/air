@@ -92,7 +92,7 @@ function buildPersonaSummary(user: UserProfile) {
 export function LiveExperience() {
   const [activeUser, setActiveUser] = useState<UserProfile>(createInitialUser);
   const onboardingRef = useRef<HTMLElement | null>(null);
-  const consoleRef = useRef<HTMLElement | null>(null);
+  const consoleRef = useRef<HTMLDivElement | null>(null);
 
   const circleRecommendations = useMemo(
     () => recommendCirclesForUser(activeUser, seedCircles),

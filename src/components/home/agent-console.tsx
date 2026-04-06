@@ -301,7 +301,7 @@ export function AgentConsole({
                   </Button>
                   <Button
                     variant="secondary"
-                    onClick={() =>
+                    onClick={() => {
                       setConversation([
                         {
                           id: "seed-agent",
@@ -311,7 +311,7 @@ export function AgentConsole({
                         },
                       ]);
                       setReply(null);
-                    }
+                    }}
                   >
                     Reset conversation
                   </Button>
