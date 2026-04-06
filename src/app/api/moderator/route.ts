@@ -39,6 +39,8 @@ export async function POST(request: Request) {
       .join(" "),
     circleName: parsed.data.circleName ?? parsed.data.circleId ?? "Active Circle",
     city: parsed.data.city,
+    attendanceRate: parsed.data.attendanceRate,
+    recentConcerns: parsed.data.recentConcerns,
   });
 
   return NextResponse.json(response);

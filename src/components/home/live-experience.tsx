@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import { useMemo, useRef, useState } from "react";
 import { SlidersHorizontal, Sparkles } from "lucide-react";
 
+import { AgentConsole } from "@/components/home/agent-console";
 import { Hero } from "@/components/home/hero";
 import { RecommendationSections } from "@/components/home/recommendation-sections";
 import { Button } from "@/components/ui/button";
@@ -89,6 +91,8 @@ function buildPersonaSummary(user: UserProfile) {
 
 export function LiveExperience() {
   const [activeUser, setActiveUser] = useState<UserProfile>(createInitialUser);
+  const onboardingRef = useRef<HTMLElement | null>(null);
+  const consoleRef = useRef<HTMLElement | null>(null);
 
   const circleRecommendations = useMemo(
     () => recommendCirclesForUser(activeUser, seedCircles),
@@ -117,6 +121,12 @@ export function LiveExperience() {
 
   const topCircle = circleRecommendations[0];
 
+  const scrollToOnboarding = () =>
+    onboardingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const scrollToConsole = () =>
+    consoleRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,#182016_0%,#0b0b0d_35%,#09090b_100%)] text-white">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-6 md:px-8 lg:px-10">
@@ -124,9 +134,14 @@ export function LiveExperience() {
           activeUser={activeUser}
           personaSummary={personaSummary}
           topCircle={topCircle}
+          onOpenOnboarding={scrollToOnboarding}
+          onOpenConsole={scrollToConsole}
         />
 
-        <section className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+        <section
+          ref={onboardingRef}
+          className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]"
+        >
           <Card className="border-[var(--yellow)]/15">
             <div className="space-y-6">
               <div className="flex items-start justify-between gap-4">
@@ -410,6 +425,13 @@ export function LiveExperience() {
           </Card>
         </section>
 
+        <div ref={consoleRef}>
+          <AgentConsole
+            activeUser={activeUser}
+            circleRecommendations={circleRecommendations}
+          />
+        </div>
+
         <RecommendationSections
           activeUser={activeUser}
           circleRecommendations={circleRecommendations}
@@ -426,7 +448,7 @@ function PreferenceGroup({
   children,
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="space-y-2">
@@ -441,7 +463,7 @@ function ToggleChipButton({
   selected,
   onClick,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   selected: boolean;
   onClick: () => void;
 }) {

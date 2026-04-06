@@ -7,9 +7,17 @@ type HeroProps = {
   activeUser: UserProfile;
   personaSummary: string;
   topCircle?: Recommendation<Circle>;
+  onOpenOnboarding?: () => void;
+  onOpenConsole?: () => void;
 };
 
-export function Hero({ activeUser, personaSummary, topCircle }: HeroProps) {
+export function Hero({
+  activeUser,
+  personaSummary,
+  topCircle,
+  onOpenOnboarding,
+  onOpenConsole,
+}: HeroProps) {
   const topCircleLabel = topCircle?.entity.name ?? "Gurgaon PM Badminton Circle";
   const topCircleMeta = topCircle
     ? `${topCircle.entity.schedule.join(" / ")} • ${topCircle.entity.location.locality} • ${topCircle.entity.health.activeMembersCount} likely repeat participants`
@@ -65,12 +73,12 @@ export function Hero({ activeUser, personaSummary, topCircle }: HeroProps) {
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Button size="lg">
-            Explore your feed
+          <Button size="lg" onClick={onOpenOnboarding}>
+            Tune your profile
             <ArrowRight className="size-4" />
           </Button>
-          <Button variant="secondary" size="lg">
-            View matching engine
+          <Button variant="secondary" size="lg" onClick={onOpenConsole}>
+            Open agent workspace
           </Button>
         </div>
       </div>
