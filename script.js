@@ -10,17 +10,36 @@ const siteContent = {
     { label: "Closing", href: "#closing" },
   ],
   hero: {
-    tagline: "Haqdarshak x Prakhar",
-    title: "Structured thinking for last-mile impact.",
-    subtitle:
-      "I am Prakhar Bhargava - a governance, product, and strategy operator who likes solving public-delivery problems by combining on-ground learning, systems thinking, and execution design. This page is my Haqdarshak x Prakhar view of what I believe, what I bring, and how I would build.",
-    intro:
-      "My edge is not only what I have done. It is how I think. I use 2 x 2 frameworks, decision trees, timelines, and operating loops to simplify ambiguity, make decisions faster, and convert complex systems into clear action.",
-    frameworks: [
-      "2 x 2 lenses",
-      "Decision trees",
-      "Timeline logic",
-      "Operating systems",
+    tagline: "Governance x Product x Strategy",
+    name: "Prakhar Bhargava",
+    role: "Structured thinker for public systems, last-mile execution, and impact at scale.",
+    brief:
+      "I am applying to Haqdarshak because my strongest work has lived at the exact intersection it operates in: governance, field learning, product thinking, and execution design. I like turning complexity into structure so teams can move faster and outcomes can reach people better.",
+    pointers: [
+      {
+        label: "Current",
+        value: "PGP in Technology & Business Management, Masters' Union",
+      },
+      {
+        label: "Standing",
+        value: "Dean's List | Rank 6",
+      },
+      {
+        label: "Former",
+        value: "Senior Political & Governance Consultant, Nation with NaMo",
+      },
+      {
+        label: "Built in",
+        value: "APM, Swiggy | Mechanical Engineer, NIT Trichy",
+      },
+    ],
+    frameworkLine:
+      "2 x 2 lenses, decision trees, timelines, and operating reviews to simplify ambiguity and sharpen action.",
+    metrics: [
+      { value: "1000+", label: "Ground interviews" },
+      { value: "54", label: "Governance papers" },
+      { value: "36", label: "Policies advanced" },
+      { value: "15%", label: "Delivery lift" },
     ],
     actions: [
       { label: "See my frameworks", href: "#frameworks", variant: "primary" },
@@ -29,33 +48,7 @@ const siteContent = {
     panel: {
       title: "Why Haqdarshak",
       body:
-        "I want to work where policy intent meets user reality, and where good thinking actually improves access. Haqdarshak does not stop at identifying the problem; it builds systems that help benefits reach people. That is exactly the kind of impact platform I want to build in.",
-      signals: [
-        {
-          title: "Field-first",
-          body: "1000+ on-ground interviews and stakeholder conversations synthesized into action.",
-        },
-        {
-          title: "System-led",
-          body: "Dashboards, issue trackers, and decision systems built for real operators.",
-        },
-        {
-          title: "Impact-driven",
-          body: "Governance depth, product thinking, and execution discipline in one loop.",
-        },
-      ],
-      preview: [
-        { title: "Observe", body: "Go on ground before prescribing." },
-        { title: "Structure", body: "Use frameworks to simplify complexity." },
-        { title: "Build", body: "Translate insight into systems and adoption." },
-        { title: "Scale", body: "Track what compounds across teams and geographies." },
-      ],
-    },
-    manifesto: {
-      label: "Governing thought",
-      headline: "Learning and impact are my core filters.",
-      body:
-        "The strongest learning happens when the problem is real, the context is messy, and the outcome matters for people. That is why Haqdarshak feels meaningful to me.",
+        "Haqdarshak solves the exact kind of problem I care about: how policy intent becomes real access. It combines welfare understanding, field execution, and systems thinking in one platform - and that is the environment where I believe I can contribute most meaningfully.",
     },
   },
   frameworks: {
@@ -458,18 +451,27 @@ function renderNav() {
 function renderHero() {
   const { hero } = siteContent;
   setText("hero-tagline", hero.tagline);
-  setText("hero-title", hero.title);
-  setText("hero-subtitle", hero.subtitle);
-  setText("hero-intro", hero.intro);
+  setText("hero-name", hero.name);
+  setText("hero-role", hero.role);
+  setText("hero-brief", hero.brief);
+  setText("hero-framework-line", hero.frameworkLine);
   setText("hero-panel-title", hero.panel.title);
   setText("hero-panel-body", hero.panel.body);
 
-  const pillWrap = document.getElementById("hero-framework-pills");
-  hero.frameworks.forEach((item) => {
-    const pill = document.createElement("span");
-    pill.className = "framework-pill";
-    pill.textContent = item;
-    pillWrap.appendChild(pill);
+  const pointerWrap = document.getElementById("hero-pointer-grid");
+  hero.pointers.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "hero-pointer";
+    card.innerHTML = `<span>${item.label}</span><strong>${item.value}</strong>`;
+    pointerWrap.appendChild(card);
+  });
+
+  const metricWrap = document.getElementById("hero-metrics-row");
+  hero.metrics.forEach((item) => {
+    const metric = document.createElement("div");
+    metric.className = "hero-metric";
+    metric.innerHTML = `<strong>${item.value}</strong><span>${item.label}</span>`;
+    metricWrap.appendChild(metric);
   });
 
   const actionWrap = document.getElementById("hero-actions");
@@ -479,33 +481,6 @@ function renderHero() {
     link.className = `button-link ${action.variant}`;
     link.textContent = action.label;
     actionWrap.appendChild(link);
-  });
-
-  const signals = document.getElementById("hero-signals");
-  hero.panel.signals.forEach((signal) => {
-    const item = document.createElement("div");
-    item.className = "signal-item";
-    item.innerHTML = `<strong>${signal.title}</strong><span>${signal.body}</span>`;
-    signals.appendChild(item);
-  });
-
-  const preview = document.getElementById("hero-framework-preview");
-  hero.panel.preview.forEach((item) => {
-    const cell = document.createElement("div");
-    cell.className = "preview-cell";
-    cell.innerHTML = `<strong>${item.title}</strong><span>${item.body}</span>`;
-    preview.appendChild(cell);
-  });
-
-  const photo = document.getElementById("hero-photo");
-  const fallback = document.getElementById("photo-fallback");
-  photo.addEventListener("error", () => {
-    photo.style.display = "none";
-    fallback.style.display = "flex";
-  });
-  photo.addEventListener("load", () => {
-    fallback.style.display = "none";
-    photo.style.display = "block";
   });
 }
 
@@ -667,29 +642,27 @@ function renderClosing() {
   });
 }
 
-function enableTilt() {
-  const heroVisual = document.getElementById("hero-visual");
-  if (!heroVisual) return;
+function enableHeroMotion() {
+  const hero = document.getElementById("hero");
+  const avatar = document.getElementById("avatar-shell");
+  const note = document.querySelector(".hero-note-card");
 
-  const layers = heroVisual.querySelectorAll(".tilt-layer");
-  heroVisual.addEventListener("mousemove", (event) => {
-    const bounds = heroVisual.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+  if (!hero || !avatar || !note) return;
 
-    layers.forEach((layer, index) => {
-      const depth = (index + 1) * 7;
-      layer.style.transform =
-        `translate3d(${x * depth}px, ${y * depth}px, 0) ` +
-        `rotateY(${x * 9}deg) rotateX(${y * -8}deg)`;
-    });
-  });
+  function updateHeroMotion() {
+    const rect = hero.getBoundingClientRect();
+    const viewport = window.innerHeight || 1;
+    const rawProgress = 1 - Math.max(Math.min(rect.bottom / (viewport + rect.height), 1), 0);
+    const progress = Math.max(0, Math.min(rawProgress, 1));
 
-  heroVisual.addEventListener("mouseleave", () => {
-    layers.forEach((layer) => {
-      layer.style.transform = "";
-    });
-  });
+    avatar.style.transform =
+      `translateY(${progress * -18}px) rotate(${progress * -4}deg) scale(${1 + progress * 0.03})`;
+    note.style.transform =
+      `translateY(${progress * -10}px)`;
+  }
+
+  updateHeroMotion();
+  window.addEventListener("scroll", updateHeroMotion, { passive: true });
 }
 
 function init() {
@@ -705,7 +678,7 @@ function init() {
   renderRoadmap();
   renderClosing();
   setText("footer-note", siteContent.footer);
-  enableTilt();
+  enableHeroMotion();
 }
 
 init();
