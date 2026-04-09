@@ -1,0 +1,33 @@
+{
+  "title": "Policy Brief on Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+  "url": "https://jgu.edu.in/jsgp/jindal-policy-research-lab/",
+  "publisher": "Jindal Policy Research Lab",
+  "published_at": "2025-11-01",
+  "captured_at": "2026-04-09T00:00:00Z",
+  "source_tier": 2,
+  "document_type": "policy_brief",
+  "ministry_owner": "Ministry of Health and Family Welfare",
+  "sector": "Health",
+  "jurisdiction": "India",
+  "summary": "The policy brief frames PM-JAY as a major instrument for financial protection in healthcare while noting that scheme impact depends on awareness, claims settlement discipline, and the strength of state implementation systems. Expansion to the elderly improves coverage intent, but weak beneficiary navigation and uneven provider participation can dilute results.",
+  "key_claims": [
+    "PM-JAY is intended to reduce catastrophic health expenditure for vulnerable households.",
+    "Policy expansion alone does not guarantee access when claims processing, hospital participation, and awareness remain uneven.",
+    "State-level administrative capability is a central determinant of implementation quality.",
+    "Financial protection gains are strongest when beneficiaries can identify empanelled hospitals and navigate the scheme without delay."
+  ],
+  "numeric_facts": [
+    {
+      "label": "Hospitalization cover referenced in policy brief",
+      "value": "Rs 5 lakh",
+      "unit": "insurance_cover",
+      "context": "The brief references PM-JAY health cover up to Rs 5 lakh per family per year."
+    }
+  ],
+  "quote_snippets": [
+    "Expansion to the elderly improves coverage intent, but weak beneficiary navigation can dilute results.",
+    "State-level administrative capability is a central determinant of implementation quality.",
+    "Financial protection gains are strongest when beneficiaries can navigate the scheme without delay."
+  ],
+  "extraction_notes": "Demo institutional research packet grounded in the user's cited policy-brief framing. Replace with direct OpenClaw capture for production runs."
+}

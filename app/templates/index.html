@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Research Workbench</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <section class="brand">
+        <span class="brand-kicker">Production-grade MVP</span>
+        <h1>Policy Research Workbench</h1>
+        <p>
+          A deployable operator console for India-governance policy analysis with
+          source packets, live capture, retrieval, brief generation, and structured extraction.
+        </p>
+      </section>
+
+      <section class="sidebar-card">
+        <h2>Sample workflows</h2>
+        <div id="sample-list" class="sample-list"></div>
+      </section>
+
+      <section class="sidebar-card">
+        <h2>Saved runs</h2>
+        <div id="run-history" class="run-list"></div>
+      </section>
+
+      <section class="sidebar-card">
+        <h2>Operating notes</h2>
+        <p class="helper">
+          Tier 1 and Tier 2 evidence should dominate factual claims. Tier 5 packets remain field signals unless corroborated.
+        </p>
+      </section>
+    </aside>
+
+    <main class="content">
+      <header class="hero">
+        <div>
+          <span class="brand-kicker">Hosted UI</span>
+          <h2>From policy question to executive-ready output</h2>
+          <p>
+            Build a packet set, capture live pages, inspect evidence quality, and generate a brief plus extraction JSON
+            from one workspace.
+          </p>
+        </div>
+        <div class="status-row">
+          <div class="status-pill"><strong>Output 1</strong> Brief JSON</div>
+          <div class="status-pill"><strong>Output 2</strong> Executive markdown</div>
+          <div class="status-pill"><strong>Output 3</strong> Extraction JSON</div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>Run configuration</h2>
+              <p>Define the policy task and choose how evidence enters the workbench.</p>
+            </div>
+            <button id="run-analysis" class="primary-button" type="button">Run analysis</button>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="policy-name">Policy name</label>
+              <input id="policy-name" type="text" placeholder="e.g. PM-JAY expansion for seniors">
+            </div>
+            <div class="field-wide">
+              <label for="policy-question">Policy question</label>
+              <textarea id="policy-question" rows="4" placeholder="What decision should this brief support?"></textarea>
+            </div>
+          </div>
+
+          <div class="panel-header slim">
+            <div>
+              <h2>Source packets</h2>
+              <p>Use a sample, upload JSON packets, or capture a fresh source page.</p>
+            </div>
+            <div class="button-row">
+              <button id="load-demo" class="secondary-button" type="button">Load PM-JAY demo</button>
+              <button id="clear-packets" class="pill-button" type="button">Clear packets</button>
+            </div>
+          </div>
+
+          <div class="form-grid form-grid-tight">
+            <div class="field">
+              <label for="sample-select">Sample dataset</label>
+              <select id="sample-select"></select>
+            </div>
+            <div class="field">
+              <label for="upload-input">Upload packet JSON files</label>
+              <input id="upload-input" type="file" accept=".json" multiple>
+            </div>
+          </div>
+
+          <div class="capture-box">
+            <div class="panel-header slim">
+              <div>
+                <h2>Live capture</h2>
+                <p>Capture a URL into a source packet. Use OpenClaw for harder sites when available.</p>
+              </div>
+              <button id="capture-url" class="secondary-button" type="button">Capture source</button>
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="capture-url-input">URL</label>
+                <input id="capture-url-input" type="url" placeholder="https://www.pib.gov.in/">
+              </div>
+              <div class="field">
+                <label for="capture-publisher">Publisher</label>
+                <input id="capture-publisher" type="text" placeholder="Press Information Bureau">
+              </div>
+              <div class="field">
+                <label for="capture-tier">Source tier</label>
+                <select id="capture-tier">
+                  <option value="1">Tier 1</option>
+                  <option value="2">Tier 2</option>
+                  <option value="3" selected>Tier 3</option>
+                  <option value="4">Tier 4</option>
+                  <option value="5">Tier 5</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="capture-document-type">Document type</label>
+                <input id="capture-document-type" type="text" value="web_page">
+              </div>
+              <div class="field">
+                <label for="capture-ministry">Ministry owner</label>
+                <input id="capture-ministry" type="text" value="Unknown">
+              </div>
+              <div class="field">
+                <label for="capture-sector">Sector</label>
+                <input id="capture-sector" type="text" value="Governance">
+              </div>
+              <div class="field">
+                <label for="capture-jurisdiction">Jurisdiction</label>
+                <input id="capture-jurisdiction" type="text" value="India">
+              </div>
+              <div class="field">
+                <label for="capture-openclaw">Use OpenClaw</label>
+                <select id="capture-openclaw">
+                  <option value="false" selected>No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>Packet inventory</h2>
+              <p id="packet-count">0 packets</p>
+            </div>
+          </div>
+          <div id="packet-list" class="packet-list"></div>
+        </section>
+      </section>
+
+      <section class="grid">
+        <section class="output-card">
+          <div class="panel-header">
+            <div>
+              <h2>Verdict and recommendations</h2>
+              <p>Fast read for senior operators.</p>
+            </div>
+          </div>
+          <div id="verdict-card" class="verdict-card empty-state">No analysis yet.</div>
+          <ul id="recommendations-list" class="recommendations-list"></ul>
+        </section>
+
+        <section class="output-card">
+          <div class="panel-header">
+            <div>
+              <h2>Extraction summary</h2>
+              <p>Structured record for dashboards and downstream tools.</p>
+            </div>
+          </div>
+          <div id="extraction-summary" class="summary-table empty-state">No extraction yet.</div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Evidence stack</h2>
+            <p>Inspect the packets that fed the current run.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Tier</th>
+                <th>Publisher</th>
+                <th>Type</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody id="evidence-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid">
+        <section class="output-card">
+          <div class="panel-header">
+            <div>
+              <h2>Brief JSON</h2>
+            </div>
+          </div>
+          <pre id="brief-json" class="code-block">No run yet.</pre>
+        </section>
+
+        <section class="output-card">
+          <div class="panel-header">
+            <div>
+              <h2>Executive brief</h2>
+            </div>
+          </div>
+          <pre id="brief-markdown" class="code-block">No run yet.</pre>
+        </section>
+      </section>
+
+      <section class="output-card">
+        <div class="panel-header">
+          <div>
+            <h2>Extraction JSON</h2>
+          </div>
+        </div>
+        <pre id="extraction-json" class="code-block">No run yet.</pre>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

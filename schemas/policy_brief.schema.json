@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/policy_brief.schema.json",
+  "title": "Policy Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_name",
+    "policy_question",
+    "one_line_verdict",
+    "verdict_confidence",
+    "context",
+    "baseline_comparison",
+    "structural_diagnosis",
+    "stakeholder_map",
+    "implementation_reality",
+    "fiscal_and_capital_allocation_view",
+    "field_intelligence",
+    "recommendations",
+    "source_register"
+  ],
+  "properties": {
+    "policy_name": {
+      "type": "string"
+    },
+    "policy_question": {
+      "type": "string"
+    },
+    "one_line_verdict": {
+      "type": "string"
+    },
+    "verdict_confidence": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "context": {
+      "type": "string"
+    },
+    "baseline_comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "rows"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "structural_diagnosis": {
+      "type": "string"
+    },
+    "stakeholder_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "role",
+          "friction_or_alignment"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "friction_or_alignment": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "implementation_reality": {
+      "type": "string"
+    },
+    "fiscal_and_capital_allocation_view": {
+      "type": "string"
+    },
+    "field_intelligence": {
+      "type": "string"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "lead_agency",
+          "rationale",
+          "confidence",
+          "timeline"
+        ],
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "lead_agency": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "timeline": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tier",
+          "name",
+          "url_or_reference"
+        ],
+        "properties": {
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "name": {
+            "type": "string"
+          },
+          "url_or_reference": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
