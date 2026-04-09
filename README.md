@@ -139,6 +139,8 @@ python3 -m policy_mvp.cli capture-url \
   --output outputs/capture/pib_packet.json
 ```
 
+Some government sites may block bare HTTP clients and return `403 Forbidden`. In those cases, use `--use-openclaw` so the capture runs through a managed browser instead of a simple fetch.
+
 ## MVP limitations
 
 - Retrieval is lexical and heuristic, not embedding-based yet.

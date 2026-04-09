@@ -83,11 +83,24 @@ def fetch_url_content(url: str, use_openclaw: bool = False, profile: str = "open
     request = Request(
         url,
         headers={
-            "User-Agent": "PolicyResearchMVP/0.1 (+https://example.com)",
+            "User-Agent": (
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-IN,en;q=0.9",
         },
     )
-    with urlopen(request, timeout=30) as response:
-        html = response.read().decode("utf-8", errors="ignore")
+    try:
+        with urlopen(request, timeout=30) as response:
+            html = response.read().decode("utf-8", errors="ignore")
+    except HTTPError as exc:
+        if exc.code == 403:
+            raise RuntimeError(
+                f"Direct HTTP fetch was blocked for {url}. Retry with --use-openclaw "
+                "for browser-based capture or choose a less restrictive source."
+            ) from exc
+        raise
     return extract_title(html, url), clean_html_to_text(html)
 
 
