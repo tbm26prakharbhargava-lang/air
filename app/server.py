@@ -72,6 +72,7 @@ class PolicyWorkbench:
             policy_question=policy_question,
             mode=mode,
             packets=packets,
+            selected_packets=packets,
             brief=brief,
             extraction=extraction,
         )
