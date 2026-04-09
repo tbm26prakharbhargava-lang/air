@@ -141,9 +141,48 @@ python3 -m policy_mvp.cli capture-url \
 
 Some government sites may block bare HTTP clients and return `403 Forbidden`. In those cases, use `--use-openclaw` so the capture runs through a managed browser instead of a simple fetch.
 
-## MVP limitations
+## Production-style web app
+
+The repository now includes a hosted operator console built on top of the MVP pipeline.
+
+### Start the web app
+
+```bash
+python3 -m policy_mvp.cli serve --host 127.0.0.1 --port 8000
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000
+```
+
+### What the app supports
+
+- load bundled sample workflows
+- upload packet JSON files directly in the browser
+- capture live URLs into source packets
+- run analysis from the current packet workspace
+- inspect saved runs and reopen them
+- view:
+  - verdict and recommendations
+  - evidence stack
+  - brief JSON
+  - executive markdown
+  - extraction JSON
+
+### App architecture
+
+- `app/server.py` - zero-dependency web server and JSON API
+- `app/templates/index.html` - main application shell
+- `app/static/styles.css` - app styling
+- `app/static/app.js` - frontend logic
+- `policy_mvp/storage.py` - persisted run storage under `data/runs/`
+
+## Current limitations
 
 - Retrieval is lexical and heuristic, not embedding-based yet.
 - Brief generation is template-driven, not LLM-backed yet.
 - Live capture via OpenClaw is optional and assumes the `openclaw` CLI is installed and configured.
 - Budget comparison quality depends on richer numeric source packets than the demo set currently includes.
+- The current web app uses a zero-dependency Python server for fast deployment; production hardening would later move to a fuller app stack with auth, background jobs, and stronger validation.
