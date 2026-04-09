@@ -1,0 +1,25 @@
+{
+  "title": "Illustrative frontline signal packet on PM-JAY awareness and activation",
+  "url": "field://pmjay/frontline/demo",
+  "publisher": "Field intelligence demo",
+  "published_at": "2026-04-01",
+  "captured_at": "2026-04-09T00:00:00Z",
+  "source_tier": 5,
+  "document_type": "field_note",
+  "ministry_owner": "Ministry of Health and Family Welfare",
+  "sector": "Health",
+  "jurisdiction": "India",
+  "summary": "Illustrative field notes for the MVP suggest that many households rely on ASHA workers or local intermediaries to understand eligibility, card status, and hospital options. The notes also suggest that confusion at the point of service can reduce effective coverage even when scheme intent is strong.",
+  "key_claims": [
+    "ASHA workers are often asked to explain eligibility and hospital navigation to families.",
+    "Last-mile awareness remains a practical bottleneck when eligibility rules change or expand.",
+    "Families may not distinguish between headline entitlement and actual ease of access at empanelled facilities."
+  ],
+  "numeric_facts": [],
+  "quote_snippets": [
+    "Families ask whether elderly members need new enrollment or can use existing household records.",
+    "Frontline workers are often the first point of clarification when hospital staff or citizens are unsure.",
+    "Headline coverage is not the same as smooth access."
+  ],
+  "extraction_notes": "Illustrative field-signal packet for MVP demonstration only. This packet is not a verified factual source and should remain explicitly labeled as low-confidence field intelligence."
+}

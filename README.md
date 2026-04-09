@@ -58,3 +58,90 @@ OpenClaw should sit at the ingestion edge of the system:
 4. send those packets into the RAG index for retrieval and downstream brief generation
 
 This keeps fine-tuned style separate from live factual retrieval. The model learns how to think and write; OpenClaw helps it gather current evidence.
+
+## Runnable MVP
+
+This repository now includes a small Python MVP that runs without external dependencies.
+
+### What the MVP does
+
+- loads source packets from JSON files
+- ranks them with a simple evidence-aware retrieval heuristic
+- generates a structured policy brief JSON
+- generates a structured extraction JSON
+- renders a markdown version of the brief
+- optionally captures a live web page into a source packet
+- optionally uses OpenClaw for live capture if the CLI is installed
+
+### Run the bundled demo
+
+```bash
+python3 -m policy_mvp.cli demo --output-dir outputs/demo
+```
+
+This uses the sample PM-JAY packets in `examples/pmjay-source-packets/` and writes:
+
+- `outputs/demo/pmjay_brief.json`
+- `outputs/demo/pmjay_brief.md`
+- `outputs/demo/pmjay_extraction.json`
+
+### Generate a brief from your own packet directory
+
+```bash
+python3 -m policy_mvp.cli brief \
+  --policy-name "Pradhan Mantri Jan Arogya Yojana (PM-JAY)" \
+  --policy-question "Assess the implementation implications of PM-JAY expansion for senior citizens." \
+  --sources-dir examples/pmjay-source-packets \
+  --output outputs/custom/brief.json \
+  --markdown-output outputs/custom/brief.md
+```
+
+### Generate extraction JSON
+
+```bash
+python3 -m policy_mvp.cli extract \
+  --policy-name "Pradhan Mantri Jan Arogya Yojana (PM-JAY)" \
+  --policy-question "Assess the implementation implications of PM-JAY expansion for senior citizens." \
+  --sources-dir examples/pmjay-source-packets \
+  --output outputs/custom/extraction.json
+```
+
+### Capture a live page into a source packet
+
+Without OpenClaw:
+
+```bash
+python3 -m policy_mvp.cli capture-url \
+  --url "https://www.pib.gov.in/" \
+  --publisher "Press Information Bureau" \
+  --published-at "Unknown" \
+  --source-tier 1 \
+  --document-type government_release \
+  --ministry-owner "Ministry of Health and Family Welfare" \
+  --sector Health \
+  --jurisdiction India \
+  --output outputs/capture/pib_packet.json
+```
+
+With OpenClaw installed:
+
+```bash
+python3 -m policy_mvp.cli capture-url \
+  --url "https://www.pib.gov.in/" \
+  --publisher "Press Information Bureau" \
+  --published-at "Unknown" \
+  --source-tier 1 \
+  --document-type government_release \
+  --ministry-owner "Ministry of Health and Family Welfare" \
+  --sector Health \
+  --jurisdiction India \
+  --use-openclaw \
+  --output outputs/capture/pib_packet.json
+```
+
+## MVP limitations
+
+- Retrieval is lexical and heuristic, not embedding-based yet.
+- Brief generation is template-driven, not LLM-backed yet.
+- Live capture via OpenClaw is optional and assumes the `openclaw` CLI is installed and configured.
+- Budget comparison quality depends on richer numeric source packets than the demo set currently includes.

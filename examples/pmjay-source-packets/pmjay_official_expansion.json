@@ -1,0 +1,45 @@
+{
+  "title": "Cabinet approves health coverage for all senior citizens aged 70 years and above under Ayushman Bharat PM-JAY",
+  "url": "https://www.pib.gov.in/",
+  "publisher": "Press Information Bureau",
+  "published_at": "2024-09-11",
+  "captured_at": "2026-04-09T00:00:00Z",
+  "source_tier": 1,
+  "document_type": "government_release",
+  "ministry_owner": "Ministry of Health and Family Welfare",
+  "sector": "Health",
+  "jurisdiction": "India",
+  "summary": "The Union Cabinet approved expansion of Ayushman Bharat Pradhan Mantri Jan Arogya Yojana to all senior citizens aged 70 years and above. PM-JAY provides health insurance cover of up to Rs 5 lakh per family per year for secondary and tertiary hospitalization, positioning the expansion as a step toward wider health protection.",
+  "key_claims": [
+    "PM-JAY was launched in 2018 as part of Ayushman Bharat.",
+    "The 2024 expansion extends scheme eligibility to all senior citizens aged 70 years and above.",
+    "The scheme offers health cover of up to Rs 5 lakh per family per year for hospitalization.",
+    "Implementation continues to depend on state-level execution and hospital empanelment."
+  ],
+  "numeric_facts": [
+    {
+      "label": "Health cover per family per year",
+      "value": "Rs 5 lakh",
+      "unit": "insurance_cover",
+      "context": "PM-JAY provides health cover of up to Rs 5 lakh per family per year."
+    },
+    {
+      "label": "Age threshold for expansion",
+      "value": "70",
+      "unit": "years",
+      "context": "The expansion applies to all senior citizens aged 70 years and above."
+    },
+    {
+      "label": "Launch year",
+      "value": "2018",
+      "unit": "year",
+      "context": "PM-JAY was launched in 2018 under Ayushman Bharat."
+    }
+  ],
+  "quote_snippets": [
+    "The expansion applies to all senior citizens aged 70 years and above.",
+    "PM-JAY provides health cover of up to Rs 5 lakh per family per year.",
+    "Implementation continues to depend on state-level execution."
+  ],
+  "extraction_notes": "Demo source packet built from the policy concept and public scheme framing. Replace with live OpenClaw capture for production use."
+}
