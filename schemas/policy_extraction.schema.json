@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/policy_extraction.schema.json",
+  "title": "Policy Extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_name",
+    "ministry_owner",
+    "launch_year",
+    "sector",
+    "target_beneficiaries",
+    "stakeholders",
+    "fiscal_data",
+    "implementation_status",
+    "impact_summary",
+    "sentiment",
+    "top_recommendation",
+    "sources"
+  ],
+  "properties": {
+    "policy_name": {
+      "type": "string"
+    },
+    "ministry_owner": {
+      "type": "string"
+    },
+    "launch_year": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "sector": {
+      "type": "string"
+    },
+    "target_beneficiaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_group",
+        "estimated_count",
+        "geographic_focus"
+      ],
+      "properties": {
+        "primary_group": {
+          "type": "string"
+        },
+        "estimated_count": {
+          "type": "string"
+        },
+        "geographic_focus": {
+          "type": "string"
+        }
+      }
+    },
+    "stakeholders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "role",
+          "incentive_alignment",
+          "friction_flag"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "incentive_alignment": {
+            "type": "string"
+          },
+          "friction_flag": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "fiscal_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_assistance",
+        "centre_state_ratio",
+        "annual_budget_cr"
+      ],
+      "properties": {
+        "unit_assistance": {
+          "type": "string"
+        },
+        "centre_state_ratio": {
+          "type": "string"
+        },
+        "annual_budget_cr": {
+          "type": "string"
+        }
+      }
+    },
+    "implementation_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overall_progress",
+        "top_bottleneck",
+        "states_lagging"
+      ],
+      "properties": {
+        "overall_progress": {
+          "type": "string"
+        },
+        "top_bottleneck": {
+          "type": "string"
+        },
+        "states_lagging": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "impact_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive",
+        "negative",
+        "confidence_level"
+      ],
+      "properties": {
+        "positive": {
+          "type": "string"
+        },
+        "negative": {
+          "type": "string"
+        },
+        "confidence_level": {
+          "type": "string",
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "sentiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "government_framing",
+        "opposition_framing",
+        "media_dominant_tone",
+        "citizen_perception"
+      ],
+      "properties": {
+        "government_framing": {
+          "type": "string"
+        },
+        "opposition_framing": {
+          "type": "string"
+        },
+        "media_dominant_tone": {
+          "type": "string"
+        },
+        "citizen_perception": {
+          "type": "string"
+        }
+      }
+    },
+    "top_recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "lead_agency",
+        "confidence_score",
+        "timeline"
+      ],
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "lead_agency": {
+          "type": "string"
+        },
+        "confidence_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "timeline": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tier",
+          "name",
+          "url_or_reference"
+        ],
+        "properties": {
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "name": {
+            "type": "string"
+          },
+          "url_or_reference": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

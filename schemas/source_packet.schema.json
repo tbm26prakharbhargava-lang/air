@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/source_packet.schema.json",
+  "title": "Source Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "url",
+    "publisher",
+    "published_at",
+    "captured_at",
+    "source_tier",
+    "document_type",
+    "ministry_owner",
+    "sector",
+    "jurisdiction",
+    "summary",
+    "key_claims",
+    "numeric_facts",
+    "quote_snippets",
+    "extraction_notes"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string"
+    },
+    "source_tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "document_type": {
+      "type": "string"
+    },
+    "ministry_owner": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "key_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "numeric_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "value",
+          "unit",
+          "context"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "quote_snippets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extraction_notes": {
+      "type": "string"
+    }
+  }
+}
