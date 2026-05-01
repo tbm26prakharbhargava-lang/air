@@ -1,0 +1,185 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum IntentType { SPORTS CORPORATE CREATORS }
+enum TimeBand { MORNINGS EVENINGS WEEKENDS WEEKDAYS }
+enum CircleType { SPORTS CORPORATE CREATORS }
+enum CadenceType { WEEKLY BIWEEKLY MONTHLY }
+enum MembershipStatus { PENDING ACTIVE LEFT }
+enum EventStatus { SCHEDULED COMPLETED CANCELLED }
+enum RSVPStatus { GOING MAYBE DECLINED }
+enum AttendanceStatus { UNKNOWN ATTENDED NO_SHOW }
+enum VerificationLevel { UNVERIFIED BASIC VERIFIED }
+enum CircleRole { MEMBER ORGANIZER }
+enum SkillLevel { BEGINNER INTERMEDIATE ADVANCED }
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  createdAt     DateTime @default(now())
+  profile       Profile?
+  behavior      UserBehaviorProfile?
+  matchingPref  UserMatchingPreference?
+  reliability   UserReliabilityMetric?
+  activityPrefs UserActivityPreference[]
+  timePrefs     UserTimePreference[]
+  circleMembers CircleMember[]
+  events        EventParticipant[]
+}
+
+model Profile {
+  userId            String @id
+  user              User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name              String
+  city              String
+  locality          String
+  bio               String?
+  profession        String?
+  verificationLevel VerificationLevel @default(UNVERIFIED)
+  primaryIntent     IntentType @default(SPORTS)
+}
+
+model Activity {
+  id          String @id @default(cuid())
+  slug        String @unique
+  name        String
+  category    String
+  circles     Circle[]
+  userPrefs   UserActivityPreference[]
+}
+
+model UserActivityPreference {
+  id            String @id @default(cuid())
+  userId        String
+  activityId    String
+  interestScore Float
+  skillLevel    SkillLevel @default(BEGINNER)
+  user          User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activity      Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  @@unique([userId, activityId])
+}
+
+model UserTimePreference {
+  id              String @id @default(cuid())
+  userId          String
+  timeBand        TimeBand
+  preferenceScore Float
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, timeBand])
+}
+
+model UserBehaviorProfile {
+  userId             String @id
+  seriousness        Float
+  planningStyle      Float
+  groupPreference    Float
+  routinePreference  Float
+  user               User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserMatchingPreference {
+  userId              String @id
+  preferredGroupSize  Int
+  verifiedOnly        Boolean @default(false)
+  beginnerFriendly    Boolean @default(true)
+  mentorLedPreference Boolean @default(false)
+  maxDistanceKm       Int @default(8)
+  user                User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Circle {
+  id           String @id @default(cuid())
+  name         String
+  city         String
+  locality     String
+  activityId   String
+  cadenceType  CadenceType
+  timeBand     TimeBand
+  circleType   CircleType
+  groupSize    Int @default(8)
+  mentorLed    Boolean @default(false)
+  createdBy    String
+  activity     Activity @relation(fields: [activityId], references: [id], onDelete: Restrict)
+  members      CircleMember[]
+  events       Event[]
+}
+
+model CircleMember {
+  id               String @id @default(cuid())
+  circleId         String
+  userId           String
+  role             CircleRole @default(MEMBER)
+  membershipStatus MembershipStatus @default(ACTIVE)
+  circle           Circle @relation(fields: [circleId], references: [id], onDelete: Cascade)
+  user             User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([circleId, userId])
+}
+
+model Event {
+  id           String @id @default(cuid())
+  circleId     String
+  title        String
+  locationName String
+  startTime    DateTime
+  capacity     Int
+  createdBy    String
+  status       EventStatus @default(SCHEDULED)
+  circle       Circle @relation(fields: [circleId], references: [id], onDelete: Cascade)
+  participants EventParticipant[]
+}
+
+model EventParticipant {
+  id               String @id @default(cuid())
+  eventId          String
+  userId           String
+  rsvpStatus       RSVPStatus @default(MAYBE)
+  attendanceStatus AttendanceStatus @default(UNKNOWN)
+  event            Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user             User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([eventId, userId])
+}
+
+model UserMatchRecommendation {
+  id          String   @id @default(cuid())
+  userId      String
+  targetId    String
+  score       Float
+  reasonsJson Json
+  generatedAt DateTime @default(now())
+  @@index([userId])
+}
+
+model UserCircleRecommendation {
+  id          String   @id @default(cuid())
+  userId      String
+  targetId    String
+  score       Float
+  reasonsJson Json
+  generatedAt DateTime @default(now())
+  @@index([userId])
+}
+
+model UserEventRecommendation {
+  id          String   @id @default(cuid())
+  userId      String
+  targetId    String
+  score       Float
+  reasonsJson Json
+  generatedAt DateTime @default(now())
+  @@index([userId])
+}
+
+model UserReliabilityMetric {
+  userId          String @id
+  eventsJoined    Int @default(0)
+  eventsAttended  Int @default(0)
+  noShowCount     Int @default(0)
+  attendanceRate  Float @default(0)
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
